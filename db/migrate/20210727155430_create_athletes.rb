@@ -9,6 +9,8 @@ class CreateAthletes < ActiveRecord::Migration[6.1]
       t.float :height
       t.integer :weight
       t.string :country
+      t.string :uid
+      t.string :provider
       t.belongs_to :gym, null: false, foreign_key: true
 
       t.timestamps
