@@ -3,7 +3,7 @@ class Score < ApplicationRecord
     belongs_to :workout
 
     def rx_scale
-        if self.rx == 0
+        if self.rx == false
             self.rx = "Scale"
         else
             self.rx = "RX"

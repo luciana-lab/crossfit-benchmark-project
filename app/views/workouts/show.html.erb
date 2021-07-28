@@ -1,9 +1,5 @@
 <h1><%= @workout.name %></h1>
 
-<div><%= @workout.category %></div>
-<% @workout.description.split(/[\,\:]/).each do |value| %>
-    <div><%= value %></div>
-<% end %>
-<div><%= @workout.about %></div><br>
+<%= render @workout %>
 
 <%= link_to "See #{@workout.name}'s scores", workout_scores_path(@workout) %>

@@ -1,0 +1,12 @@
+<h1><%= @workout.name %>'s Scores</h1>
+<%= render partial: 'workouts/workout', locals: {workout: @workout} %>
+
+<h2>Scores</h2>
+<% @workout.scores.each do |score| %>
+    <% if score.public? %>
+        <div><%= score.athlete.first_name %> <%= score.athlete.last_name %></div>
+        <div><%= score.rx_scale %></div>
+        <div><%= score.result_by_category %></div>
+        <div><%= score.date %></div><br>
+    <% end %>
+<% end %>

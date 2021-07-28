@@ -1,7 +1,9 @@
 module WorkoutsHelper
     # def workout_description(workout)
-    #     workout.description.split(/[\,\:]/).each do |value|
-    #        value
+    #     w = workout.description.split(/[\,\:]/).map do |value|
+    #        return content_tag(:div, value)
+    #     #    byebug
     #     end
+    #     w.join(" ")
     # end
 end
