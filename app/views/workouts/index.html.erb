@@ -1,0 +1,12 @@
+<h1>Workouts</h1>
+<div>
+    <% @workouts.each do |workout| %>
+        <div><%= link_to workout.name, workout_path(workout) %></div>
+        <div><%= workout.category %></div>
+        <% workout.description.split(/[\,\:]/).each do |value| %>
+           <div><%= value %></div>
+        <% end %>
+        <div><%= workout.about %></div><br>
+        </tr>
+    <% end %>
+</div>
