@@ -62,7 +62,7 @@ scores = [
     {rx: 1, time: "00:01:16", public: 1, athlete: noah, workout: grace},
 
     {rx: 1, time: "00:02:18", public: 1, athlete: katrin, workout: fran},
-    {rx: 1, time: "00:01:28", public: 1, athlete: katrin, work: grace},
+    {rx: 1, time: "00:01:28", public: 1, athlete: katrin, workout: grace},
     {rx: 1, time: "00:09:16", public: 1, athlete: katrin, workout: helen},
 
     {rx: 1, time: "00:02:07", public: 1, athlete: mat, workout: fran},
@@ -74,7 +74,7 @@ scores = [
     {rx: 1, time: "00:08:51", date: "2018-10-06", public: 1, athlete: stephan, workout: grace},
     {rx: 1, time: "00:03:06", date: "2021-07-06", public: 1, athlete: stephan, workout: grace},
     {rx: 1, time: "00:10:21", date: "2019-10-02", public: 1, athlete: stephan, workout: helen},
-    {rx: 0, reps: 390, date: "2018-09-11", notes: "13 rounds" public: 1, athlete: stephan, workout: mary},
+    {rx: 0, reps: 390, date: "2018-09-11", notes: "13 rounds", public: 1, athlete: stephan, workout: mary},
     {rx: 1, time: "00:55:20", date: "2017-05-29", notes: "unpartitioned", public: 1, athlete: stephan, workout: murph},
     {rx: 1, time: "00:51:36", date: "2018-05-28", notes: "unpartitioned", public: 1, athlete: stephan, workout: murph},
     {rx: 1, time: "00:46:30", date: "2019-05-27", notes: "unpartitioned", public: 1, athlete: stephan, workout: murph},
@@ -87,11 +87,11 @@ scores = [
     {rx: 0, time: "00:03:47", date: "2021-07-06", notes: "65 lbs", public: 1, athlete: luciana, workout: grace},
     {rx: 1, time: "00:13:03", date: "2019-05-10", public: 1, athlete: luciana, workout: helen},
     {rx: 1, time: "00:11:26", date: "2019-10-02", public: 1, athlete: luciana, workout: helen},
-    {rx: 0, time: "00:04:16", date: "2021-02-12", notes: "65 lbs" public: 1, athlete: luciana, workout: isabel},
+    {rx: 0, time: "00:04:16", date: "2021-02-12", notes: "65 lbs", public: 1, athlete: luciana, workout: isabel},
     {rx: 1, time: "00:08:51", date: "2019-04-05", public: 1, athlete: luciana, workout: karen},
-    {rx: 0, time: "00:63:15", date: "2018-05-28", notes: "20 rounds of Cindy, pull-ups with a band, no vest" public: 1, athlete: luciana, workout: murph},
-    {rx: 0, time: "00:62:27", date: "2019-05-27", notes: "20 rounds of Cindy, no vest)" public: 1, athlete: luciana, workout: murph},
-    {rx: 0, time: "00:74:55", date: "2021-05-29", notes: "20 rounds of Cindy, no vest" public: 1, athlete: luciana, workout: murph},
+    {rx: 0, time: "00:63:15", date: "2018-05-28", notes: "20 rounds of Cindy, pull-ups with a band, no vest", public: 1, athlete: luciana, workout: murph},
+    {rx: 0, time: "00:62:27", date: "2019-05-27", notes: "20 rounds of Cindy, no vest)", public: 1, athlete: luciana, workout: murph},
+    {rx: 0, time: "00:74:55", date: "2021-05-29", notes: "20 rounds of Cindy, no vest", public: 1, athlete: luciana, workout: murph},
     {rx: 0, reps: 143, date: "2021-03-05", notes: "10 rounds + 3 reps / 2 bands (green/purple) bar MU, 2 mats HSPU, 45 lbs kb swing", public: 1, athlete: luciana, workout: nate},
     {rx: 0, time: "00:48:50", date: "2019-12-31", notes: "100 lbs power clenas", public: 1, athlete: luciana, workout: holleyman}
 ]
