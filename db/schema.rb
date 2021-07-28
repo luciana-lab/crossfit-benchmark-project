@@ -39,8 +39,7 @@ ActiveRecord::Schema.define(version: 2021_07_27_160116) do
 
   create_table "scores", force: :cascade do |t|
     t.boolean "rx", default: true
-    t.time "time"
-    t.integer "reps"
+    t.time "result"
     t.date "date"
     t.string "notes"
     t.boolean "public", default: true

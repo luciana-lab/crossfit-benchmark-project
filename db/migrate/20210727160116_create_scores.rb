@@ -2,8 +2,7 @@ class CreateScores < ActiveRecord::Migration[6.1]
   def change
     create_table :scores do |t|
       t.boolean :rx, default: 1
-      t.time :time
-      t.integer :reps
+      t.time :result
       t.date :date
       t.string :notes
       t.boolean :public, default: 1
