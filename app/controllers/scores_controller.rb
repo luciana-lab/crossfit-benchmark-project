@@ -12,4 +12,17 @@ class ScoresController < ApplicationController
         end
     end
 
+    def new
+        @score = Score.new
+    end
+
+    def create
+        @score = Score.new(score_params)
+    end
+
+    private
+    def score_params
+        params.require(:score).permit(:rx, :result, :date, :notes, :public)
+    end
+
 end

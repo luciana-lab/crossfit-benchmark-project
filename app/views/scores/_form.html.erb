@@ -1,0 +1,33 @@
+<%= form_with model: @score do |f| %>
+
+    <div class="form-group">
+    <%= f.label :date %>
+    <%= f.date_select :date, placeholder: "YYYY/MM/DD" %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :rx, "Check if you did it as RX standard" %>
+    <%= f.check_box :rx %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :result %>
+    <% if @workout.category == "For time" %>
+        <%= f.time_select :result, include_seconds: true %>
+    <% else %>
+        <%= f.number_field :result %>
+    <% end %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :notes %>
+    <%= f.text_field :notes %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :public, "Check if you want to make this score public" %>
+    <%= f.check_box :public %>
+
+    <div class="actions">
+    <%= f.submit "Add Score" %>
+<% end %>

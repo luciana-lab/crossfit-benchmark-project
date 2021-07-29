@@ -17,4 +17,8 @@ class Score < ApplicationRecord
             self.result.strftime("%M + %S")
         end
     end
+
+    def self.search_by_rx_scale
+        where(rx_scale)
+    end
 end
