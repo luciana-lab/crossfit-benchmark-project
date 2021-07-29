@@ -3,3 +3,5 @@
 <% @gyms.each do |gym| %>
     <div><%= link_to gym.name, gym_path(gym) %></div><br>
 <% end %>
+
+<%= button_to "Add a gym", new_gym_path %>

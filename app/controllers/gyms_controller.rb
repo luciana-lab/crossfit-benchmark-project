@@ -4,7 +4,7 @@ class GymsController < ApplicationController
     end
 
     def show
-        @gym = Gym.find(params[:id])
+        find_gym
     end
 
     def new
@@ -20,8 +20,25 @@ class GymsController < ApplicationController
         end
     end
 
+    def edit
+        find_gym
+    end
+
+    def update
+        find_gym
+        if @gym.update
+            redirect_to gym_path(@gym)
+        else
+            render :edit
+        end
+    end
+
     private
     def gym_params
         params.require(:gym).permit(:name, :website, :address)
+    end
+
+    def find_gym
+        @gym = Gym.find(params[:id])
     end
 end
