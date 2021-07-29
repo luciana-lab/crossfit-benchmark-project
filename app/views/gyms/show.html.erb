@@ -2,6 +2,12 @@
 
 <div>Visit <%= link_to "Website", @gym.website%></div>
 <div><%= @gym.address %></div>
+<br>
+
+<%# if current_user_belongs_to_gym %>
+    <%= link_to "Edit Gym", edit_gym_path(@gym) %>
+    <%= button_to "Delete Gym", gym_path(@gym), method: :delete, data: { confirm: "Are you sure?" } %>
+<%# end %>
 
 <h3>Athletes:</h3>
 <% @gym.users.each do |user| %>
