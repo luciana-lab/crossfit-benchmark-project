@@ -1,8 +1,12 @@
-<%= form_with model: @score do |f| %>
+<%= form_for([@workout, @score]) do |f| %>
+
+    <%#= f.hidden_field :user.id, value: @user_id %>
+    <%#= f.hidden_field :current_user.id, value: current_user.id %>
+    <%= f.hidden_field :workout_id, value: @workout.id %>
 
     <div class="form-group">
     <%= f.label :date %>
-    <%= f.date_select :date, placeholder: "YYYY/MM/DD" %>
+    <%= f.date_select :date %>
     </div>
 
     <div class="form-group">
@@ -10,11 +14,13 @@
     <%= f.check_box :rx %>
     </div>
 
+    <%# add it to helper method %>
     <div class="form-group">
-    <%= f.label :result %>
     <% if @workout.category == "For time" %>
+        <%= f.label :result_time, "Your time" %>
         <%= f.time_select :result_time, include_seconds: true %>
     <% else %>
+        <%= f.label :result_reps, "Total number of reps" %>
         <%= f.number_field :result_reps %>
     <% end %>
     </div>
@@ -25,7 +31,7 @@
     </div>
 
     <div class="form-group">
-    <%= f.label :public, "Check if you want to make this score public" %>
+    <%= f.label :public, "Check if you want to make this score to be public" %>
     <%= f.check_box :public %>
 
     <div class="actions">
