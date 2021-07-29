@@ -1,1 +1,4 @@
-<%#= render 'form' %>
+<h1>Your <%= @workout.name %>'s Score</h1>
+<%= render partial: 'workouts/workout', locals: {workout: @workout} %>
+
+<%= render 'form' %>

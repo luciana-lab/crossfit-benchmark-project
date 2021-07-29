@@ -8,16 +8,19 @@ class ScoresController < ApplicationController
                 redirect_to workouts_path, alert: "Workout not found."
             else
                 @scores = Score.all
-                @score = Score.new(workout_id: params[:workout_id]) # same as @score = @workout.scores.build
             end
         else
             @scores = Score.all
-            @score = Score.new(workout_id: params[:workout_id])
         end
     end
 
     def new
-        # @score = Score.new
+        if params[:workout_id] && @workout = Workout.find(params[:workout_id])
+            @score = @workout.scores.build # same as @score = Score.new(workout_id: params[:workout_id])
+        else
+            @score = Score.new
+            @score.build_workout
+        end
     end
 
     def create
@@ -28,7 +31,7 @@ class ScoresController < ApplicationController
         if @score.save
             redirect_to workout_scores_path
         else
-            render :new # not sure
+            render :new
         end
     end
 

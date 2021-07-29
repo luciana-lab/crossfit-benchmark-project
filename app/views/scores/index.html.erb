@@ -1,10 +1,8 @@
 <h1><%= @workout.name %>'s Scores</h1>
 <%= render partial: 'workouts/workout', locals: {workout: @workout} %>
 
-<h3>Add Your Score</h3>
-<%= render 'form' %>
-
 <h2>Scores</h2>
+
 <% @workout.scores.each do |score| %>
     <% if score.public? %>
         <div><%= score.user.first_name %> <%= score.user.last_name %></div>
@@ -14,4 +12,4 @@
     <% end %>
 <% end %>
 
-
+<%= link_to "Add your score", new_workout_score_path %>
