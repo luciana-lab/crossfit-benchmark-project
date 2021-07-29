@@ -1,3 +1,3 @@
 class Gym < ApplicationRecord
-    has_many :athletes
+    has_many :users
 end

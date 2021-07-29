@@ -1,5 +1,5 @@
 class Score < ApplicationRecord
-    belongs_to :athlete
+    belongs_to :user
     belongs_to :workout
 
     def rx_scale
@@ -12,9 +12,7 @@ class Score < ApplicationRecord
 
     def result_by_category
         if self.workout.category == "For time"
-            self.result.strftime("%M:%S")
-        else
-            self.result.strftime("%M + %S")
+            self.result_time.strftime("%M:%S")
         end
     end
 

@@ -14,14 +14,14 @@ new_england = Gym.create(name: "Crossfit New England", website: "https://crossfi
 champlain_valley = Gym.create(name: "Champlain Valley Crossfit", website: "https://cvcfvt.com", address: "1191 S Brownell Rd #10, Williston, VT 05495, United States")
 cigar_city = Gym.create(name: "Cigar City Crossfit", website: "https://www.cigarcitycrossfit.com", address: "1703 N 24th St, Tampa, FL 33605, United States")
 
-tia = Athlete.create(first_name: "Tia-Clair", last_name: "Toomey", email: "tia@gmail.com", password: "champion", age: 28, height: 5.4, weight: 128, country: "Australia", gym: east_nashville)
-noah = Athlete.create(first_name: "Noah", last_name: "Ohlsean", email: "noah@gmail.com", password: "hungry", age: 30, height: 5.7, weight: 190, country: "United States", gym: peak_360)
-sara = Athlete.create(first_name: "Sara", last_name: "Sigmundsdottir", email: "sara@gmail.com", password: "pizza", age: 28, height: 5.6, weight: 152, country: "Iceland", gym: sudurnes)
-adler = Athlete.create(first_name: "Jeffrey", last_name: "Adler", email: "adler@gmail.com", password: "maple", age: 27, height: 5.9, weight: 197, country: "Canada", gym: wonderland)
-stephan = Athlete.create(first_name: "Stephan", last_name: "Takai", email: "stephan@gmail.com", password: "gold", age: 38, height: 5.4, weight: 140, country: "Brazil", gym: one_world)
-katrin = Athlete.create(first_name: "Katrin", last_name: "Davidsdottir", email: "katrin@gmail.com", password: "focus", age: 28, height: 5.6, weight: 150, country: "Iceland", gym: new_england)
-mat = Athlete.create(first_name: "Mathew", last_name: "Fraser", email: "mat@gmail.com", password: "number1", age: 31, height: 5.7, weight: 195, country: "United States", gym: champlain_valley)
-luciana = Athlete.create(first_name: "Luciana", last_name: "Sugeta", email: "luciana@gmail.com", password: "rookie", age: 34, height: 5.4, weight: 107, country: "Brazil", gym: cigar_city)
+tia = User.create(first_name: "Tia-Clair", last_name: "Toomey", email: "tia@gmail.com", password: "champion", age: 28, height: 5.4, weight: 128, country: "Australia", gym: east_nashville)
+noah = User.create(first_name: "Noah", last_name: "Ohlsean", email: "noah@gmail.com", password: "hungry", age: 30, height: 5.7, weight: 190, country: "United States", gym: peak_360)
+sara = User.create(first_name: "Sara", last_name: "Sigmundsdottir", email: "sara@gmail.com", password: "pizza", age: 28, height: 5.6, weight: 152, country: "Iceland", gym: sudurnes)
+adler = User.create(first_name: "Jeffrey", last_name: "Adler", email: "adler@gmail.com", password: "maple", age: 27, height: 5.9, weight: 197, country: "Canada", gym: wonderland)
+stephan = User.create(first_name: "Stephan", last_name: "Takai", email: "stephan@gmail.com", password: "gold", age: 38, height: 5.4, weight: 140, country: "Brazil", gym: one_world)
+katrin = User.create(first_name: "Katrin", last_name: "Davidsdottir", email: "katrin@gmail.com", password: "focus", age: 28, height: 5.6, weight: 150, country: "Iceland", gym: new_england)
+mat = User.create(first_name: "Mathew", last_name: "Fraser", email: "mat@gmail.com", password: "number1", age: 31, height: 5.7, weight: 195, country: "United States", gym: champlain_valley)
+luciana = User.create(first_name: "Luciana", last_name: "Sugeta", email: "luciana@gmail.com", password: "rookie", age: 34, height: 5.4, weight: 107, country: "Brazil", gym: cigar_city)
 
 angie = Workout.create(name: "Angie", group: "Girls", category: "For time", description: "100 pull-ups, 100 push-ups, 200 sit-ups, 100 squats")
 cindy = Workout.create(name: "Cindy", group: "Girls", category: "AMRAP", description: "20 minutes of: 5 pull-ups, 10 push-ups, 15 squats")
@@ -49,52 +49,52 @@ hortman = Workout.create(name: "Hortman", group: "Hero", category: "AMRAP", desc
 sisson = Workout.create(name: "Sisson", group: "Hero", category: "AMRAP", description: "20 minutes of (in a 20/14 lb vest or body armor): 1 rope climb (15-ft), 5 burpees, 200 meter run", about: "U.S. Army 2nd Lt. Justin Sisson, 23, assigned to 1st Battalion, 506th Infantry Regiment, 4th Brigade Combat Team, 101st Airborne Division in Fort Campbell, Kentucky, died June 3, 2013, from wounds caused by a suicide bomber in Chamkani, Afghanistan.")
 
 scores = [
-    {rx: 1, result: "00:02:02", public: 1, athlete: adler, workout: fran},
-    {rx: 1, result: "00:01:16", public: 1, athlete: adler, workout: grace},
-    {rx: 1, result: "00:07:18", public: 1, athlete: adler, workout: helen},
+    {rx: 1, result_time: "00:02:02", public: 1, user: adler, workout: fran},
+    {rx: 1, result_time: "00:01:16", public: 1, user: adler, workout: grace},
+    {rx: 1, result_time: "00:07:18", public: 1, user: adler, workout: helen},
 
-    {rx: 1, result: "00:02:03", public: 1, athlete: sara, workout: grace},
-    {rx: 1, result: "00:09:26", public: 1, athlete: sara, workout: helen},
+    {rx: 1, result_time: "00:02:03", public: 1, user: sara, workout: grace},
+    {rx: 1, result_time: "00:09:26", public: 1, user: sara, workout: helen},
 
-    {rx: 1, result: "00:02:13", public: 1, athlete: tia, workout: fran},
-    {rx: 1, result: "00:01:21", public: 1, athlete: tia, workout: grace},
+    {rx: 1, result_time: "00:02:13", public: 1, user: tia, workout: fran},
+    {rx: 1, result_time: "00:01:21", public: 1, user: tia, workout: grace},
 
-    {rx: 1, result: "00:01:58", public: 1, athlete: noah, workout: fran},
-    {rx: 1, result: "00:01:16", public: 1, athlete: noah, workout: grace},
+    {rx: 1, result_time: "00:01:58", public: 1, user: noah, workout: fran},
+    {rx: 1, result_time: "00:01:16", public: 1, user: noah, workout: grace},
 
-    {rx: 1, result: "00:02:18", public: 1, athlete: katrin, workout: fran},
-    {rx: 1, result: "00:01:28", public: 1, athlete: katrin, workout: grace},
-    {rx: 1, result: "00:09:16", public: 1, athlete: katrin, workout: helen},
+    {rx: 1, result_time: "00:02:18", public: 1, user: katrin, workout: fran},
+    {rx: 1, result_time: "00:01:28", public: 1, user: katrin, workout: grace},
+    {rx: 1, result_time: "00:09:16", public: 1, user: katrin, workout: helen},
 
-    {rx: 1, result: "00:02:07", public: 1, athlete: mat, workout: fran},
-    {rx: 1, result: "00:01:18", public: 1, athlete: mat, workout: grace},
+    {rx: 1, result_time: "00:02:07", public: 1, user: mat, workout: fran},
+    {rx: 1, result_time: "00:01:18", public: 1, user: mat, workout: grace},
 
-    {rx: 1, result: "00:13:5", date: "2018-08-28", notes: "20 lb vest", public: 1, athlete: stephan, workout: cindy},
-    {rx: 1, result: "00:23:18", date: "2019-05-17", public: 1, athlete: stephan, workout: cindy},
-    {rx: 1, result: "00:04:37", date: "2019-04-12", public: 1, athlete: stephan, workout: diane},
-    {rx: 1, result: "00:08:51", date: "2018-10-06", public: 1, athlete: stephan, workout: grace},
-    {rx: 1, result: "00:03:06", date: "2021-07-06", public: 1, athlete: stephan, workout: grace},
-    {rx: 1, result: "00:10:21", date: "2019-10-02", public: 1, athlete: stephan, workout: helen},
-    {rx: 0, result: "00:13:00", date: "2018-09-11", public: 1, athlete: stephan, workout: mary},
-    {rx: 1, result: "00:55:20", date: "2017-05-29", notes: "unpartitioned", public: 1, athlete: stephan, workout: murph},
-    {rx: 1, result: "00:51:36", date: "2018-05-28", notes: "unpartitioned", public: 1, athlete: stephan, workout: murph},
-    {rx: 1, result: "00:46:30", date: "2019-05-27", notes: "unpartitioned", public: 1, athlete: stephan, workout: murph},
-    {rx: 1, result: "00:49:00", date: "2021-05-29", notes: "unpartitioned with 20 lb vest", public: 1, athlete: stephan, workout: murph},
+    {rx: 1, result_reps: 395, date: "2018-08-28", notes: "13 + 5 / 20 lb vest", public: 1, user: stephan, workout: cindy},
+    {rx: 1, result_reps: 708, notes: "23 + 18", date: "2019-05-17", public: 1, user: stephan, workout: cindy},
+    {rx: 1, result_time: "00:04:37", date: "2019-04-12", public: 1, user: stephan, workout: diane},
+    {rx: 1, result_time: "00:08:51", date: "2018-10-06", public: 1, user: stephan, workout: grace},
+    {rx: 1, result_time: "00:03:06", date: "2021-07-06", public: 1, user: stephan, workout: grace},
+    {rx: 1, result_time: "00:10:21", date: "2019-10-02", public: 1, user: stephan, workout: helen},
+    {rx: 0, result_reps: "00:13:00", date: "2018-09-11", public: 1, user: stephan, workout: mary},
+    {rx: 1, result_time: "00:55:20", date: "2017-05-29", notes: "unpartitioned", public: 1, user: stephan, workout: murph},
+    {rx: 1, result_time: "00:51:36", date: "2018-05-28", notes: "unpartitioned", public: 1, user: stephan, workout: murph},
+    {rx: 1, result_time: "00:46:30", date: "2019-05-27", notes: "unpartitioned", public: 1, user: stephan, workout: murph},
+    {rx: 1, result_time: "00:49:00", date: "2021-05-29", notes: "unpartitioned with 20 lb vest", public: 1, user: stephan, workout: murph},
 
-    {rx: 0, result: "00:12:11", date: "2018-09-11", notes: "knees push-ups", public: 1, athlete: luciana, workout: cindy},
-    {rx: 0, result: "00:11:12", date: "2019-04-12", notes: "135 lbs, 2 mats handstand push-ups", public: 1, athlete: luciana, workout: diane},
-    {rx: 0, result: "00:10:48", date: "2018-06-03", notes: "45 lbs thrusters, pull-ups with red band", public: 1, athlete: luciana, workout: fran},
-    {rx: 0, result: "00:05:30", date: "2018-10-06", notes: "65 lbs", public: 1, athlete: luciana, workout: grace},
-    {rx: 0, result: "00:03:47", date: "2021-07-06", notes: "65 lbs", public: 1, athlete: luciana, workout: grace},
-    {rx: 1, result: "00:13:03", date: "2019-05-10", public: 1, athlete: luciana, workout: helen},
-    {rx: 1, result: "00:11:26", date: "2019-10-02", public: 1, athlete: luciana, workout: helen},
-    {rx: 0, result: "00:04:16", date: "2021-02-12", notes: "65 lbs", public: 1, athlete: luciana, workout: isabel},
-    {rx: 1, result: "00:08:51", date: "2019-04-05", public: 1, athlete: luciana, workout: karen},
-    {rx: 0, result: "00:63:15", date: "2018-05-28", notes: "20 rounds of Cindy, pull-ups with a band, no vest", public: 1, athlete: luciana, workout: murph},
-    {rx: 0, result: "00:62:27", date: "2019-05-27", notes: "20 rounds of Cindy, no vest)", public: 1, athlete: luciana, workout: murph},
-    {rx: 0, result: "00:74:55", date: "2021-05-29", notes: "20 rounds of Cindy, no vest", public: 1, athlete: luciana, workout: murph},
-    {rx: 0, result: "00:10:3", date: "2021-03-05", notes: "2 bands (green/purple) bar MU, 2 mats HSPU, 45 lbs kb swing", public: 1, athlete: luciana, workout: nate},
-    {rx: 0, result: "00:48:50", date: "2019-12-31", notes: "100 lbs power clenas", public: 1, athlete: luciana, workout: holleyman}
+    {rx: 0, result_reps: 371, date: "2018-09-11", notes: "12 + 11 / knees push-ups", public: 1, user: luciana, workout: cindy},
+    {rx: 0, result_time: "00:11:12", date: "2019-04-12", notes: "135 lbs, 2 mats handstand push-ups", public: 1, user: luciana, workout: diane},
+    {rx: 0, result_time: "00:10:48", date: "2018-06-03", notes: "45 lbs thrusters, pull-ups with red band", public: 1, user: luciana, workout: fran},
+    {rx: 0, result_time: "00:05:30", date: "2018-10-06", notes: "65 lbs", public: 1, user: luciana, workout: grace},
+    {rx: 0, result_time: "00:03:47", date: "2021-07-06", notes: "65 lbs", public: 1, user: luciana, workout: grace},
+    {rx: 1, result_time: "00:13:03", date: "2019-05-10", public: 1, user: luciana, workout: helen},
+    {rx: 1, result_time: "00:11:26", date: "2019-10-02", public: 1, user: luciana, workout: helen},
+    {rx: 0, result_time: "00:04:16", date: "2021-02-12", notes: "65 lbs", public: 1, user: luciana, workout: isabel},
+    {rx: 1, result_time: "00:08:51", date: "2019-04-05", public: 1, user: luciana, workout: karen},
+    {rx: 0, result_time: "00:63:15", date: "2018-05-28", notes: "20 rounds of Cindy, pull-ups with a band, no vest", public: 1, user: luciana, workout: murph},
+    {rx: 0, result_time: "00:62:27", date: "2019-05-27", notes: "20 rounds of Cindy, no vest)", public: 1, user: luciana, workout: murph},
+    {rx: 0, result_time: "00:74:55", date: "2021-05-29", notes: "20 rounds of Cindy, no vest", public: 0, user: luciana, workout: murph},
+    {rx: 0, result_reps: 143, date: "2021-03-05", notes: "10 + 3 / 2 bands (green/purple) bar MU, 2 mats HSPU, 45 lbs kb swing", public: 1, user: luciana, workout: nate},
+    {rx: 0, result_time: "00:48:50", date: "2019-12-31", notes: "100 lbs power clenas", public: 1, user: luciana, workout: holleyman}
 ]
 
 scores.each do |score|

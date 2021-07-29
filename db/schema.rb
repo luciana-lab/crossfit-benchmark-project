@@ -12,7 +12,30 @@
 
 ActiveRecord::Schema.define(version: 2021_07_27_160116) do
 
-  create_table "athletes", force: :cascade do |t|
+  create_table "gyms", force: :cascade do |t|
+    t.string "name"
+    t.string "website"
+    t.string "address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "scores", force: :cascade do |t|
+    t.boolean "rx", default: true
+    t.time "result_time"
+    t.integer "result_reps"
+    t.date "date"
+    t.string "notes"
+    t.boolean "public", default: true
+    t.integer "user_id", null: false
+    t.integer "workout_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_scores_on_user_id"
+    t.index ["workout_id"], name: "index_scores_on_workout_id"
+  end
+
+  create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "email"
@@ -26,29 +49,7 @@ ActiveRecord::Schema.define(version: 2021_07_27_160116) do
     t.integer "gym_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["gym_id"], name: "index_athletes_on_gym_id"
-  end
-
-  create_table "gyms", force: :cascade do |t|
-    t.string "name"
-    t.string "website"
-    t.string "address"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "scores", force: :cascade do |t|
-    t.boolean "rx", default: true
-    t.time "result"
-    t.date "date"
-    t.string "notes"
-    t.boolean "public", default: true
-    t.integer "athlete_id", null: false
-    t.integer "workout_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["athlete_id"], name: "index_scores_on_athlete_id"
-    t.index ["workout_id"], name: "index_scores_on_workout_id"
+    t.index ["gym_id"], name: "index_users_on_gym_id"
   end
 
   create_table "workouts", force: :cascade do |t|
@@ -61,7 +62,7 @@ ActiveRecord::Schema.define(version: 2021_07_27_160116) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "athletes", "gyms"
-  add_foreign_key "scores", "athletes"
+  add_foreign_key "scores", "users"
   add_foreign_key "scores", "workouts"
+  add_foreign_key "users", "gyms"
 end

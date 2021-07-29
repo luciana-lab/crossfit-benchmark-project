@@ -1,4 +1,4 @@
 class Workout < ApplicationRecord
     has_many :scores
-    has_many :athletes, through: :scores
+    has_many :users, through: :scores
 end

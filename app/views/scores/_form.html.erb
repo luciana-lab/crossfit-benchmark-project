@@ -13,9 +13,9 @@
     <div class="form-group">
     <%= f.label :result %>
     <% if @workout.category == "For time" %>
-        <%= f.time_select :result, include_seconds: true %>
+        <%= f.time_select :result_time, include_seconds: true %>
     <% else %>
-        <%= f.number_field :result %>
+        <%= f.number_field :result_reps %>
     <% end %>
     </div>
 
