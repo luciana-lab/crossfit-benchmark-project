@@ -1,0 +1,9 @@
+<h1><%= @gym.name %></h1>
+
+<div>Visit <%= link_to "Website", @gym.website%></div>
+<div><%= @gym.address %></div>
+
+<h3>Athletes:</h3>
+<% @gym.users.each do |user| %>
+    <%= user.first_name %> <%= user.last_name %>
+<% end %>

@@ -1,5 +1,5 @@
 <h1>CrossFit Affiliate Gyms</h1>
 
 <% @gyms.each do |gym| %>
-    <div><%= gym.name %></div><br>
+    <div><%= link_to gym.name, gym_path(gym) %></div><br>
 <% end %>
