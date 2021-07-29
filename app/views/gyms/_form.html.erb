@@ -1,0 +1,22 @@
+<%= form_for @gym do |f| %>
+
+    <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :website %>
+    <%= f.text_field :website %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+    </div>
+
+    <div class="actions">
+    <%= f.submit "Add Gym" %>
+    </div>
+
+<% end %>
