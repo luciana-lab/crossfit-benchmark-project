@@ -32,6 +32,11 @@ class WorkoutsController < ApplicationController
         end
     end
 
+    def destroy
+        @workout.destroy
+        redirect_to workouts_path
+    end
+
     private
     def workout_params
         params.require(:workout).permit(:name, :group, :category, :description, :about)

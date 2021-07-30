@@ -9,8 +9,8 @@
       <%= f.label :group %>
       <%= f.select :group, options_for_select(Workout.all.map {|select| [ select.group ]}.uniq), {prompt: true} %>
       
-      <%= f.radio_button :group, 'Other', checked: false, onchange: "$('other_group_input')[this.checked ? 'show' : 'hide']();" %>
-      <%= f.label :radio_button_label, "Other (please list): " %>
+      <%= f.radio_button :group, 'Other', checked: false, onchange: "$('other_group_input')[this.checked ? 'show' : 'hide']();", value: :group_other %>
+      <%= f.label :radio_button_label, "Other (please list):" %>
       <div id="other_group_input">
         <%= f.text_field :group_other %></div>
     </div>
