@@ -1,6 +1,6 @@
 class GymsController < ApplicationController
     include GymsHelper
-    #before_action redirect_if_not_belong_to_gym, only: [:edit, :update, :destroy]
+    #before_action :redirect_if_not_belong_to_gym, only: [:edit, :update, :destroy]
 
     def index
         @gyms = Gym.all
