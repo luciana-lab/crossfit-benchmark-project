@@ -1,4 +1,4 @@
-<%= form_for @user, url: signup_path do |f| %>
+<%= form_for([@gym, @user], url: signup_path) do |f| %>
     
     <div class="form-group">
     <%= f.label :email %>
@@ -39,6 +39,15 @@
     <%= f.label :country %>
     <%= f.text_field :country %>
     </div>
+
+    <%# ERROR when render :new is not showing up the create new gym form %>
+    <div class="form-group">
+    <h3>Select Your CrossFit Affiliate Gym:</h3>
+        <%= f.collection_select :gym_id, Gym.all, :id, :name, {prompt: true} %>
+    <p>If not found, add your gym below: </p>
+        <%= f.fields_for :gym do |g| %>
+            <%= render partial: 'gyms/form', locals: {f: g} %>
+        <% end %>
 
     <div class="actions">
     <%= f.submit "Create Account" %>

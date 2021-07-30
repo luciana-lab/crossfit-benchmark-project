@@ -1,2 +1,9 @@
 <h1>Create Gym</h1>
-<%= render 'form' %>
+
+<%= form_for @gym  do |f| %>
+    <%= render 'form' %>
+
+    <div class="actions">
+    <%= f.submit "Submit Gym" %>
+    </div>
+<% end %>
