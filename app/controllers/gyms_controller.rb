@@ -1,5 +1,6 @@
 class GymsController < ApplicationController
     include GymsHelper
+    before_action :find_gym, only: [:show, :edit, :update, :destroy]
     #before_action :redirect_if_not_belong_to_gym, only: [:edit, :update, :destroy]
 
     def index
@@ -7,7 +8,6 @@ class GymsController < ApplicationController
     end
 
     def show
-        find_gym
     end
 
     def new
@@ -24,11 +24,9 @@ class GymsController < ApplicationController
     end
 
     def edit
-        find_gym
     end
 
     def update
-        find_gym
         if @gym.update
             redirect_to gym_path(@gym)
         else
@@ -37,7 +35,7 @@ class GymsController < ApplicationController
     end
 
     def destroy
-        find_gym.destroy
+        @gym.destroy
         redirect_to gyms_path
     end
 
