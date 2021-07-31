@@ -4,10 +4,14 @@ Rails.application.routes.draw do
 
   get '/signup', to: "users#new"
   post '/signup', to: "users#create"
-  resources :users, only: [:show]
+
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"
 
+  get '/logout', to: "sessions#destroy"
+  delete '/logout', to: "sessions#destroy"
+
+  resources :users, only: [:show]
   resources :gyms
   resources :workouts do
     resources :scores, shallow: true
