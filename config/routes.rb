@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get '/auth/google_oauth2/callback', to: "sessions#omniauth"
+
   root 'welcome#index'
 
   get '/signup', to: "users#new"
@@ -8,7 +11,6 @@ Rails.application.routes.draw do
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"
 
-  get '/logout', to: "sessions#destroy"
   delete '/logout', to: "sessions#destroy"
 
   resources :users, only: [:show]
@@ -16,7 +18,5 @@ Rails.application.routes.draw do
   resources :workouts do
     resources :scores, shallow: true
   end
-
-  
 
 end
