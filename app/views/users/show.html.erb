@@ -1,2 +1,20 @@
-<%= @user.email %>
-<%= @user.gym.name %>
+<h1><%= @user.first_name %> <%= @user.last_name %> Profile Page</h1>
+<h3>Gym Affiliate: <%#= link_to @user.gym.name, gym_path(@user.gym) %></h3>
+
+    <li><%= @user.email %></li>
+    <li><%= @user.country %></li>
+    <li>Age: <%= @user.age %></li>
+    <li>Height: <%= @user.height %></li>
+    <li>Weight: <%= @user.weight %></li>
+<br>
+
+<% @user.scores.each do |score| %>
+    <div><%= link_to score.workout.name, workout_scores_path(score.workout) %></div>
+    <div><%= score.date %></div>
+    <div><%= score.rx_scale %></div>
+    <div><%= score.result_by_category %></div>
+    <div><%= score.notes %></div>
+    <div><%= score.public? %></div>
+    <div><%= link_to "Edit Score", edit_score_path(score) %></div>
+    <br>
+<% end %>

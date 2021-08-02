@@ -27,12 +27,10 @@ ActiveRecord::Schema.define(version: 2021_07_27_160116) do
     t.date "date"
     t.string "notes"
     t.boolean "public", default: true
-    t.integer "user_id", null: false
-    t.integer "workout_id", null: false
+    t.integer "user_id"
+    t.integer "workout_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_scores_on_user_id"
-    t.index ["workout_id"], name: "index_scores_on_workout_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,10 +44,9 @@ ActiveRecord::Schema.define(version: 2021_07_27_160116) do
     t.string "country"
     t.string "uid"
     t.string "provider"
-    t.integer "gym_id", null: false
+    t.integer "gym_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["gym_id"], name: "index_users_on_gym_id"
   end
 
   create_table "workouts", force: :cascade do |t|
@@ -62,7 +59,4 @@ ActiveRecord::Schema.define(version: 2021_07_27_160116) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "scores", "users"
-  add_foreign_key "scores", "workouts"
-  add_foreign_key "users", "gyms"
 end

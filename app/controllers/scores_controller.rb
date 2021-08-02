@@ -1,5 +1,6 @@
 class ScoresController < ApplicationController
     before_action :redirect_if_not_logged_in?
+    before_action :find_score, only: [:edit, :update, :destroy]
 
     def index
         if params[:workout_id] && @workout = Workout.find(params[:workout_id])
@@ -35,9 +36,24 @@ class ScoresController < ApplicationController
         end
     end
 
+    def edit
+    end
+
+    def update
+        if @score.update
+            redirect_to user_path(@score.user)
+        else
+            render :edit
+        end
+    end
+
     private
     def score_params
         params.require(:score).permit(:user_id, :workout_id, :date, :rx, :result_time, :result_reps, :notes, :public)
+    end
+
+    def find_score
+        @score = Score.find(params[:id])
     end
 
 end

@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
 
     def omniauth
         user = User.from_omniauth(auth)
+        #byebug
         if user.valid?
             session[:user_id] = user.id
             flash[:message] = "Successful Login!!"
