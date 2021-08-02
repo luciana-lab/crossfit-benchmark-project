@@ -40,11 +40,16 @@ class ScoresController < ApplicationController
     end
 
     def update
-        if @score.update
+        if @score.update(score_params)
             redirect_to user_path(@score.user)
         else
             render :edit
         end
+    end
+
+    def destroy
+        @score.destroy
+        redirect_to user_path(@score.user)
     end
 
     private

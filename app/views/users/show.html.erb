@@ -21,5 +21,6 @@
     <div><%= score.notes %></div>
     <div><%= score.public? %></div>
     <div><%= link_to "Edit Score", edit_score_path(score) %></div>
+    <div><%= link_to "Delete Score", score_path(score), method: 'delete' %></div>
     <br>
 <% end %>

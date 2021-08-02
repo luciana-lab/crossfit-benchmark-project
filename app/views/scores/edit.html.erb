@@ -1,0 +1,44 @@
+<h1>Edit Your <%= @score.workout.name %> Score</h1>
+
+<%= render partial: 'layouts/error', locals: { object: @score } %>
+
+<%= form_for(@score) do |f| %>
+
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :workout_id, value: @score.workout.id %>
+
+    <div class="form-group">
+    <%= f.label :date %>
+    <%= f.date_select :date %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :rx, "Check if you did it as RX standard" %>
+    <%= f.check_box :rx %>
+    </div>
+
+    <%# add it to helper method %>
+    <div class="form-group">
+    <% if @score.workout.category == "For time" %>
+        <%= f.label :result_time, "Your time" %>
+        <%= f.time_select :result_time, include_seconds: true %>
+    <% else %>
+        <%= f.label :result_reps, "Total number of reps" %>
+        <%= f.number_field :result_reps %>
+    <% end %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :notes %>
+    <%= f.text_field :notes %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :public, "Check if you want to make this score to be public" %>
+    <%= f.check_box :public %>
+
+    <div class="actions">
+    <%= f.submit "Update Score" %>
+    </div>
+
+<% end %>
