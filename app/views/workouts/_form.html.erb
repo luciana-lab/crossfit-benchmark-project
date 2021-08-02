@@ -1,3 +1,5 @@
+<%= render partial: 'layouts/error', locals: { object: @workout } %>
+
 <%= form_for @workout do |f| %>
 
     <div class="form-group">
@@ -8,19 +10,11 @@
     <div class="form-group">
       <%= f.label :group %>
       <%= f.select :group, options_for_select(Workout.all.map {|select| [ select.group ]}.uniq), {prompt: true} %>
-      
-      <%= f.radio_button :group, 'Other', checked: false, onchange: "$('other_group_input')[this.checked ? 'show' : 'hide']();", value: :group_other %>
-      <%= f.label :radio_button_label, "Other (please list):" %>
-      <div id="other_group_input">
-        <%= f.text_field :group_other %></div>
-    </div>
-
-    <%#= fields_for :group, @workout.group do |group_field| %>
-    <%#= group_field.radio_button :group_field, 'Other', 
-    onchange: "$('other_reason_input')[this.checked ? 'show' : 'hide']();" %>
-    <%#= group_fields.radio_button group_fields, 'Other', checked: false, 
-    onchange: "$('other_reason_input')[this.checked ? 'show' : 'hide']();" %>
-    <%# end %>
+      If not found, add your the workout group:
+        <%= f.fields_for :workout do |w| %>
+            <%= w.text_field :group %>
+        <% end %>
+    <div>
 
     <div class="form-group">
     <%= f.label :category %>

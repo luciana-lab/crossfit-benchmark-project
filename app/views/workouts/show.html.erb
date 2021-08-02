@@ -2,10 +2,9 @@
 
 <%= render @workout %>
 
-<%= link_to "Edit Workout", edit_workout_path(@workout) %>
-
 <%# add it inside Helper %>
-<% if @workout.scores.blank? %>
+<% if logged_in? && @workout.scores.blank? %>
+    <%= link_to "Edit Workout", edit_workout_path(@workout) %>
     <%= button_to "Delete Workout", workout_path(@workout), method: :delete, data: { confirm: "Are you sure?" } %>
 <% end %>
 <br>

@@ -1,5 +1,5 @@
 class ScoresController < ApplicationController
-    #before_action :redirect_if_not_logged_in?
+    before_action :redirect_if_not_logged_in?
 
     def index
         if params[:workout_id] && @workout = Workout.find(params[:workout_id])

@@ -1,0 +1,10 @@
+<% if object.errors.any? %>
+    <div id="error_explanation">
+    <%= pluralize(object.errors.count, "error") %>
+
+    <% object.errors.each do |error| %>
+        <div><%= error.full_message %></div>
+        
+    <% end %>
+    <br>
+<% end %>

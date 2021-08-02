@@ -2,6 +2,7 @@ class GymsController < ApplicationController
     include GymsHelper
     before_action :find_gym, only: [:show, :edit, :update, :destroy]
     before_action :redirect_if_not_belong_to_gym, only: [:edit, :update, :destroy]
+    before_action :redirect_if_not_logged_in?, only: [:new, :create]
 
     def index
         @gyms = Gym.all
@@ -16,7 +17,7 @@ class GymsController < ApplicationController
 
     def create
         @gym = Gym.new(gym_params)
-        if current_user
+        if @gym.save
             redirect_to gym_path(@gym)
         else
             render :new

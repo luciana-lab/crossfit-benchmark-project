@@ -1,7 +1,8 @@
+<%= render partial: 'layouts/error', locals: { object: @score } %>
+
 <%= form_for([@workout, @score]) do |f| %>
 
-    <%#= f.hidden_field :user.id, value: @user_id %>
-    <%#= f.hidden_field :current_user.id, value: current_user.id %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.hidden_field :workout_id, value: @workout.id %>
 
     <div class="form-group">
@@ -37,5 +38,5 @@
     <div class="actions">
     <%= f.submit "Add Score" %>
     </div>
-    
+
 <% end %>

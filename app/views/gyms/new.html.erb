@@ -1,6 +1,8 @@
 <h1>Create Gym</h1>
 
-<%= form_for @gym  do |f| %>
+<%= render partial: 'layouts/error', locals: { object: @gym } %>
+
+<%= form_for @gym do |f| %>
     <%= render 'form' %>
 
     <div class="actions">

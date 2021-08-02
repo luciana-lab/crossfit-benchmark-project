@@ -1,3 +1,5 @@
+<%= render partial: 'layouts/error', locals: { object: @user } %>
+
 <%= form_for([@gym, @user], url: signup_path) do |f| %>
     
     <div class="form-group">

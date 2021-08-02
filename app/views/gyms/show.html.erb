@@ -6,7 +6,7 @@
 
 <% if current_user_belongs_to_gym %>
     <%= link_to "Edit Gym", edit_gym_path(@gym) %>
-    <%= button_to "Delete Gym", gym_path(@gym), method: :delete, data: { confirm: "Are you sure?" } %>
+    <%= link_to "Delete Gym", gym_path(@gym), method: 'delete', data: { confirm: "Are you sure? All #{@gym.name}'s Athletes will also be deleted" } %>
 <% end %>
 
 <h3>Athletes:</h3>
