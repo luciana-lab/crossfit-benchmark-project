@@ -1,6 +1,6 @@
 class WorkoutsController < ApplicationController
     before_action :find_workout, only: [:show, :edit, :update, :destroy]
-    # before_action :redirect_if_not_logged_in?, only [:edit, :update, :destroy]
+    before_action :redirect_if_not_logged_in?, only: [:edit, :update, :destroy]
 
     def index
         @workouts = Workout.all

@@ -6,4 +6,5 @@ module ScoresHelper
     #         self.result.strftime("%M + %S")
     #     end
     # end
+
 end
