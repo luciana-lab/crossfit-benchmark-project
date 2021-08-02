@@ -1,6 +1,9 @@
+<h1>Edit <%= @user.first_name %> <%= @user.last_name %> Profile</h1>
+
+<%#= render 'form' %>
 <%= render partial: 'layouts/error', locals: { object: @user } %>
 
-<%= form_for(@user, url: signup_path) do |f| %>
+<%= form_for @user do |f| %>
     
     <div class="form-group">
     <%= f.label :email %>
@@ -65,6 +68,6 @@
         <% end %>
 
     <div class="actions">
-    <%= f.submit "Create Account" %>
+    <%= f.submit "Update Account" %>
 
 <% end %>
