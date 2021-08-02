@@ -9,12 +9,13 @@
 
     <div class="form-group">
       <%= f.label :group %>
-      <%= f.select :group, options_for_select(Workout.all.map {|select| [ select.group ]}.uniq), {prompt: true} %>
-      If not found, add your the workout group:
-        <%= f.fields_for :workout do |w| %>
-            <%= w.text_field :group %>
-        <% end %>
-    <div>
+        <%= f.text_field :group, list: "group_autocomplete" %>
+        <datalist id="group_autocomplete">
+            <% Workout.all.map(&:group).uniq.each do |select| %>
+                <option value="<%= select %>">
+            <% end %>
+        </datalist>
+    </div>
 
     <div class="form-group">
     <%= f.label :category %>

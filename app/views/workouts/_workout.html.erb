@@ -1,4 +1,5 @@
 <div><%= link_to workout.name, workout_path(workout) %></div>
+<div><%= workout.group %></div>
 <div><%= workout.category %></div>
 <% workout.description.split(/[\,\:]/).each do |value| %>
     <div><%= value %></div>
