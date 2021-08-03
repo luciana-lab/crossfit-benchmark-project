@@ -7,6 +7,13 @@ Filter by Category:
 <% end %>
 <br>
 
+Filter by Group:
+<%= form_tag(workouts_path, method: "get") do %>
+    <%= collection_select :workout, :wod_group, Workout.select(:wod_group).distinct, :wod_group, :wod_group, prompt: true %>
+    <%= submit_tag "Filter" %>
+<% end %>
+<br>
+
 <div>
     <%= render partial: 'workout', collection: @workouts %>
 </div>

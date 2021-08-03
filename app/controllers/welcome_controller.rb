@@ -5,6 +5,6 @@ class WelcomeController < ApplicationController
 
     private
     def workout_params
-        params.require(:workout).permit(:name, :category, :description, :id, :search)
+        params.require(:workout).permit(:name, :wod_group, :category, :description, :id, :search)
     end
 end

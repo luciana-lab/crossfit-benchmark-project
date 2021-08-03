@@ -8,10 +8,10 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :group %>
-        <%= f.text_field :group, list: "group_autocomplete" %>
+      <%= f.label :wod_group %>
+        <%= f.text_field :wod_group, list: "group_autocomplete" %>
         <datalist id="group_autocomplete">
-            <% Workout.all.map(&:group).uniq.each do |select| %>
+            <% Workout.all.map(&:wod_group).uniq.each do |select| %>
                 <option value="<%= select %>">
             <% end %>
         </datalist>

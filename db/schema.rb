@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2021_07_27_160116) do
 
   create_table "workouts", force: :cascade do |t|
     t.string "name"
-    t.string "group"
+    t.string "wod_group"
     t.string "category"
     t.text "description"
     t.text "about"

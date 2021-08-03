@@ -7,6 +7,9 @@ class WorkoutsController < ApplicationController
         if params[:workout] && !params[:workout][:category].blank?
             @workouts = Workout.category_selector(params[:workout][:category])
         end
+        if params[:workout] && !params[:workout][:wod_group].blank?
+            @workouts = Workout.wod_group_selector(params[:workout][:wod_group])
+        end
     end
 
     def show
@@ -43,7 +46,7 @@ class WorkoutsController < ApplicationController
 
     private
     def workout_params
-        params.require(:workout).permit(:name, :group, :category, :description, :about)
+        params.require(:workout).permit(:name, :wod_group, :category, :description, :about)
     end
 
     def find_workout
