@@ -11,24 +11,32 @@
   </head>
 
   <body>
-    <nav>
-      <ul>
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Workouts", workouts_path %></li>
-        <li><%= link_to "Gyms", gyms_path %></li>
+    <div class="navbar">
+        <div class="a"><%= link_to "HOME", root_path %></div>
+        <div class="dropdown">
+          <button class="dropbtn">WORKOUTS
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <div class="a"><%= link_to "FOR TIME", workouts_path(category: "For time") %></div>
+            <div class="a"><%= link_to "AMRAP", workouts_path(category: "AMRAP") %></div>
+            <div class="a"><%= link_to "EMOM", workouts_path(category: "EMOM") %></div>
+            <div class="a"><%= link_to "ALL", workouts_path %></div>
+          </div>
+        </div>
+        <div class="a"><%= link_to "GYMS", gyms_path %></div>
         <% if logged_in? %>
-          <li><%= link_to "Profile", user_path(current_user.id) %></li>
-          <li><%= link_to "Log Out", logout_path, method: 'delete' %></li>
+          <div class="a"><%= link_to "PROFILE", user_path(current_user.id) %></div>
+          <div class="a"><%= link_to "LOG OUT", logout_path, method: 'delete' %></div>
         <% else %>
-          <li><%= link_to "Sign Up", signup_path %></li>
-          <li><%= link_to "Log In", login_path %></li>
-          <li><%= button_to "Log in with Google", '/auth/google_oauth2' %></li>
+          <div class="a"><%= link_to "SIGN UP", signup_path %></div>
+          <div class="a"><%= link_to "LOG IN", login_path %></div>
+          <a><%= button_to "LOG IN WITH GOOGLE", '/auth/google_oauth2' %></a>
         <% end %>
         <%flash.each do |type, msg| %>
           <%= msg %>
         <% end %>
-      </ul>
-    </nav>
+    </div>
     <%= yield %>
   </body>
 </html>

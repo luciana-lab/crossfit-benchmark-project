@@ -3,7 +3,12 @@ class WorkoutsController < ApplicationController
     before_action :redirect_if_not_logged_in?, only: [:edit, :update, :destroy]
 
     def index
-        @workouts = Workout.all
+        if params[:category]
+            @workouts = Workout.where(category: params[:category])
+        else
+            @workouts = Workout.all
+        end
+        # @workouts = Workout.all
         if params[:workout] && !params[:workout][:category].blank?
             @workouts = Workout.category_selector(params[:workout][:category])
         end
