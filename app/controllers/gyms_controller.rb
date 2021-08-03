@@ -9,7 +9,6 @@ class GymsController < ApplicationController
     end
 
     def join
-        # byebug
         current_user.update_attribute(:gym_id, @gym.id)
         redirect_to gym_path(@gym)
     end

@@ -8,10 +8,18 @@ class ScoresController < ApplicationController
             if @workout.nil?
                 redirect_to workouts_path, alert: "Workout not found."
             else
-                @scores = Score.all
+                # if @workout.category == "For time"
+                @scores = Score.order_by_rx_and_result
+                # else
+                #     @scores = Score.order_by_rx.order_by_result_reps
+                # end
             end
         else
-            @scores = Score.all
+            # if @workout.category == "For time"
+                @scores = Score.order_by_rx_and_result
+            # else
+            #     @scores = Score.order_by_rx.order_by_result_reps
+            # end
         end
     end
 

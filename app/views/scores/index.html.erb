@@ -5,16 +5,28 @@
 
 <% @workout.scores.each do |score| %>
     <% if score.public? %>
+    <%# byebug %>
+        <div><%= score.date %></div>
+        <div><%#= score.date.to_formatted_s(:long)  %></div>
+        <div><%#= score.date.to_s(:date) %></div>
         <div><%= score.user.first_name %> <%= score.user.last_name %></div>
         <div><%= score.rx_scale %></div>
-        <div><%= score.result_by_category %></div>
-        <div><%= score.date %></div>
 
-         <% if score.user == current_user %>
+        <% if @workout.category == "For time" %>
+        <%= score.result_time %>
+        <%#= score.result_time.to_s("%M:%S") %>
+        <% else %>
+        <%= score.result_reps %>
+        <% end %>
+        <div><%#= score.result_by_category %></div>
+        <%# byebug %>
+    <% end %>
+
+        <% if score.user == current_user %>
             <div><%= link_to "Edit Score", edit_score_path(score) %></div>
             <div><%= link_to "Delete Score", score_path(score), method: 'delete' %></div><br>
         <% end %>
-    <% end %>
+    
     <br>
 <% end %>
 
