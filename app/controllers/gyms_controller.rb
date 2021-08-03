@@ -1,11 +1,22 @@
 class GymsController < ApplicationController
     include GymsHelper
-    before_action :find_gym, only: [:show, :edit, :update, :destroy]
+    before_action :find_gym, only: [:join, :leave, :show, :edit, :update, :destroy]
     before_action :redirect_if_not_belong_to_gym, only: [:edit, :update, :destroy]
     before_action :redirect_if_not_logged_in?, only: [:new, :create]
 
     def index
         @gyms = Gym.all
+    end
+
+    def join
+        # byebug
+        current_user.update_attribute(:gym_id, @gym.id)
+        redirect_to gym_path(@gym)
+    end
+
+    def leave
+        current_user.update_attribute(:gym_id, nil)
+        redirect_to gyms_path
     end
 
     def show
@@ -28,7 +39,7 @@ class GymsController < ApplicationController
     end
 
     def update
-        if @gym.update
+        if @gym.update(gym_params)
             redirect_to gym_path(@gym)
         else
             render :edit

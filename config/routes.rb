@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback', to: "sessions#omniauth"
 
+  # get '/join', to: "gyms#join"
+
   root 'welcome#index'
 
   get '/signup', to: "users#new"
@@ -14,7 +16,14 @@ Rails.application.routes.draw do
   delete '/logout', to: "sessions#destroy"
 
   resources :users, only: [:show, :edit, :update, :destroy]
-  resources :gyms
+  
+  resources :gyms do
+    member do
+      get 'join'
+      get 'leave'
+    end
+  end
+
   resources :workouts do
     resources :scores, shallow: true
   end

@@ -3,7 +3,7 @@
 <%= render partial: 'layouts/error', locals: { object: @gym } %>
 
 <%= form_for @gym do |f| %>
-    <%= render 'form' %>
+    <%= render partial: 'form', locals: { f: f } %>
 
     <div class="actions">
     <%= f.submit "Submit Gym" %>

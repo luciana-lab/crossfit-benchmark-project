@@ -10,4 +10,8 @@ class Workout < ApplicationRecord
     def self.search(search)
         where("LOWER(name) LIKE :term OR LOWER(wod_group) LIKE :term OR LOWER(category) LIKE :term OR LOWER(description) LIKE :term", term: "%#{search}%")
     end
+
+    # def self.filter(filter)
+    #     where("wod_group LIKE :filter OR category LIKE :filter", filter: filter)
+    # end
 end

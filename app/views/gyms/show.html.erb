@@ -1,6 +1,7 @@
 <h1><%= @gym.name %></h1>
 
-<div>Visit <%= link_to "Website", @gym.website%></div>
+<div>Visit <%= link_to "Website","http://#{@gym.website}", target: "_blank" %></div>
+
 <div><%= @gym.address %></div>
 <br>
 
@@ -10,6 +11,10 @@
 <% end %>
 
 <h3>Athletes:</h3>
+
+<%= link_to "Join", join_gym_path(@gym) %>
+<%= link_to "Leave", leave_gym_path(@gym) %>
+
 <% @gym.users.each do |user| %>
     <%= user.first_name %> <%= user.last_name %>
 <% end %>
