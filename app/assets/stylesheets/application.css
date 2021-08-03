@@ -52,7 +52,7 @@
 }
 
 .dropdown-content a:hover {
-    background-color: rgba(35,96,191,10);
+    background-color: rgba(63,119,223,10);
 }
 
 .dropdown:hover .dropdown-content {
@@ -61,11 +61,19 @@
 
 /* Welcome Page */
 .header-welcome {
-    padding: 250px;
-    text-align: center;
-    background: black;
     color: white;
     font-size: 30px;
+    background-image: url('/welcome.png');
+    background-size: cover;
+    height: 650px;
+    background-position: 50% 33%;
+}
+
+.header-welcome .search {
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 43%;
 }
 
 .content-welcome {padding: 20px; }

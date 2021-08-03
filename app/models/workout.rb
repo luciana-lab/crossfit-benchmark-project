@@ -4,7 +4,7 @@ class Workout < ApplicationRecord
     validates :name, presence: true, uniqueness: true
     validates :category, :description, presence: true
 
-    scope :category_selector, -> (category) {where('category == ?', category)}
+    # scope :category_selector, -> (category) {where('category == ?', category)}
     scope :wod_group_selector, -> (wod_group) {where('wod_group == ?', wod_group)}
     
     def self.search(search)

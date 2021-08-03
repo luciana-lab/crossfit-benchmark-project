@@ -1,11 +1,11 @@
 <h1>Workouts</h1>
 
-Filter by Category:
+<!-- Filter by Category:
 <%= form_tag(workouts_path, method: "get") do %>
     <%= collection_select :workout, :category, Workout.select(:category).distinct, :category, :category, prompt: true %>
     <%= submit_tag "Filter" %>
 <% end %>
-<br>
+<br> -->
 
 Filter by Group:
 <%= form_tag(workouts_path, method: "get") do %>

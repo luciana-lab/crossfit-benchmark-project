@@ -1,21 +1,20 @@
 <div class="header-welcome">
-
+    <div class="search">
         <%= form_tag root_path, method: 'get' do %>
-            <%= label_tag(:search) %>
-            <%= text_field_tag :search, params[:search] %>
+            <%= label_tag :search, "Find Workouts" %><br>
+            <%= text_field_tag :search, params[:search], placeholder: "e.g. squat" %>
             <%= submit_tag("Search") %>
         <% end %>
-        
+    </div>
 </div>
 
 <div class="content-welcome">
-
     <% if @workouts.empty? %>
-        <p>No workouts were found.</p>
+        <p>Sorry, no workouts were found.</p>
     <% else %>
+        <h1><%= params[:search] %></h1>
         <% @workouts.each do |workout| %>
             <p><%= link_to workout.name, workout_path(workout) %></p>
         <% end %>
     <% end %>
-
 </div>
