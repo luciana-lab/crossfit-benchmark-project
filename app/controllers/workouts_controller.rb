@@ -4,6 +4,9 @@ class WorkoutsController < ApplicationController
 
     def index
         @workouts = Workout.all
+        if params[:workout] && !params[:workout][:category].blank?
+            @workouts = Workout.category_selector(params[:workout][:category])
+        end
     end
 
     def show
