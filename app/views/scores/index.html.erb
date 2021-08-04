@@ -5,16 +5,11 @@
 
 <% @scores.each do |score| %>
     <% if score.public? %>
-    <%# byebug %>
-        <div><%= score.date %></div>
-        <div><%#= score.date.to_formatted_s(:long)  %></div>
-        <div><%#= score.date.to_s(:date) %></div>
+        <div><%= format_date score.date %></div>
         <div><%= score.user.first_name %> <%= score.user.last_name %></div>
         <div><%= score.rx_scale %></div>
-
-        <%= score.result_time.strftime('%M:%S') %>
-        <%= score.result_reps %>
-        <div><%#= score.result_by_category %></div>
+        <div><%= format_time score.result_time, :time %></div>
+        <div><%= score.result_reps %></div>
     <% end %>
 
         <% if score.user == current_user %>

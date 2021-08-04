@@ -1,6 +1,9 @@
 module ScoresHelper
-    # def helper_result_time
-    #     self.result_time.to_s.strftime("%M:%S")
-    # end
+    def format_time(time, format = '%M:%S')
+        time.blank? ? '' : time.to_s(format)
+    end
 
+    def format_date(date, format = :long)
+        date.blank? ? '' : date.to_s(format)
+      end
 end
