@@ -1,3 +1,17 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.req {
+    color: red;
+    font-size: 13px;
+  }
+
 /* navbar */
 .navbar {
     overflow: hidden;
@@ -78,20 +92,20 @@
 
 .content-welcome {padding: 20px; }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
+.search-btn {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border: none;
+    padding: 9px 21px;
+    display: inline-block;
+    cursor: pointer;
 }
+
+.search-btn:hover { background-color: rgb(48, 48, 49); }
 
 /* Login Page */
-body {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-* {
-    box-sizing: border-box;
-}
-
 .container {
     position: relative;
     border-radius: 5px;
@@ -99,9 +113,8 @@ body {
     padding: 20px 0 30px 0;
 }
 
-.login .btn {
+.login {
     width: 100%;
-    padding: 12px;
     border: none;
     border-radius: 4px;
     margin: 5px 0;
@@ -112,25 +125,45 @@ body {
     text-decoration: none;
 }
 
-.login:hover .btn:hover { opacity: 1; }
+div.row {
+    text-align: center;
+}
 
-.fb {
+.fb-btn {
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    padding: 15px 32px;
+    display: inline-block;
+    cursor: pointer;
     background-color: #3B5998;
     color: white;
 }
 
-.google {
+.google-btn {
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    padding: 15px 32px;
+    display: inline-block;
+    cursor: pointer;
     background-color: #dd4b39;
     color: white;
 }
 
-.login-actions {
+.login-btn {
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    padding: 10px 57px;
+    display: inline-block;
     background-color: #04AA6D;
     color: white;
     cursor: pointer;
 }
 
-.login-actions:hover { background-color: #45a049; }
+.login-btn:hover { background-color: rgb(87, 166, 137); }
+.google-btn:hover { background-color: #dd6a5a; }
 
 .col {
     float: left;
@@ -165,12 +198,6 @@ body {
 }
 
 .hide-md-lg { display: none; }
-
-.bottom-container {
-    text-align: center;
-    background-color: #666;
-    border-radius: 0px 0px 4px 4px;
-}
 
 @media screen and (max-width: 650px) {
     .col {

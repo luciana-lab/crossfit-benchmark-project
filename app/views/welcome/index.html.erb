@@ -3,7 +3,7 @@
         <%= form_tag root_path, method: 'get' do %>
             <%= label_tag :search, "Find Workouts" %><br>
             <%= text_field_tag :search, params[:search], placeholder: "e.g. squat" %>
-            <%= submit_tag("Search") %>
+            <%= submit_tag "Search", {class: "search-btn"} %>
         <% end %>
     </div>
 </div>
