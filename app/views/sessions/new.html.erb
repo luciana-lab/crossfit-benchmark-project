@@ -1,18 +1,44 @@
-<h1>Log In</h1>
+<div class="container">
+    <form action="/action_page.php">
+        <div class="row">
+            <h2 style="text-align:center">Login with Google or Manually</h2>
+            <div class="vl">
+                <span class="vl-innertext">or</span>
+            </div>
 
-<%= form_for :user, url: '/login' do |f| %>
+            <div class="col">
+                <%= button_to "Login with Google", '/auth/google_oauth2' %>
+                    <i class="fa fa-google fa-fw"></i></div>
+            </div>
 
-    <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email %>
+            <div class="col">
+                <div class="hide-md-lg">
+                    <p>Or sign in manually:</p>
+                </div>
+
+                <%= form_for :user, url: '/login' do |f| %>
+                    <div class="login-form">
+                        <%#= f.label :email %>
+                        <%= f.email_field :email, placeholder: "Email" %>
+                    </div>
+
+                    <div class="login-form">
+                        <%#= f.label :password %>
+                        <%= f.password_field :password, placeholder: "Password" %>
+                    </div>
+
+                    <div class="login-actions">
+                        <%= f.submit "Log In" %>
+                    </div>
+                <% end %>
+            </div>
+    </form>
+</div>
+
+<div class="bottom-container">
+    <div class="row">
+        <div class="col">
+            <div style="color:white" class="btn"><%= link_to "Sign up", signup_path %></div>
+        </div>
     </div>
-
-    <div class="form-group">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    </div>
-
-    <div class="actions">
-    <%= f.submit "Log In" %>
-    </div>
-<% end %>
+</div>
