@@ -79,8 +79,8 @@ body {
     font-size: 30px;
     background-image: url('/welcome.png');
     background-size: cover;
-    height: 650px;
-    background-position: 50% 33%;
+    height: 600px;
+    background-position: 50% 23%;
 }
 
 .header-welcome .search {
@@ -89,8 +89,6 @@ body {
     top: 40%;
     left: 43%;
 }
-
-.content-welcome {padding: 20px; }
 
 .search-btn {
     text-align: center;
@@ -104,6 +102,35 @@ body {
 }
 
 .search-btn:hover { background-color: rgb(48, 48, 49); }
+
+.content-welcome {
+    width: 200px;
+    margin: 40px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+    border-bottom: 1px solid #ccc;
+}
+
+li .search-workouts-link {
+    text-decoration: none;
+    color: #000;
+    transition: font-size 0.3s ease, background-color 0.3s ease;
+    display: block;
+    width: 200px;
+}
+
+li .search-workouts-link:hover {
+  font-size: 30px;
+  background: #f6f6f6;
+}
 
 /* Login Page */
 .container {

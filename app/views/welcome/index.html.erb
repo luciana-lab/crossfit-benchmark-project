@@ -2,7 +2,7 @@
     <div class="search">
         <%= form_tag root_path, method: 'get' do %>
             <%= label_tag :search, "Find Workouts" %><br>
-            <%= text_field_tag :search, params[:search], placeholder: "e.g. squat" %>
+            <%= text_field_tag :search, params[:search], placeholder: "e.g. Squat" %>
             <%= submit_tag "Search", {class: "search-btn"} %>
         <% end %>
     </div>
@@ -12,9 +12,11 @@
     <% if @workouts.empty? %>
         <p>Sorry, no workouts were found.</p>
     <% else %>
-        <h1><%= params[:search] %></h1>
+        <h2><%= params[:search] %></h2>
         <% @workouts.each do |workout| %>
-            <p><%= link_to workout.name, workout_path(workout) %></p>
+            <ul>
+            <li><%= link_to workout.name, workout_path(workout), {class: "search-workouts-link"} %></li>
+            </ul>
         <% end %>
     <% end %>
 </div>
