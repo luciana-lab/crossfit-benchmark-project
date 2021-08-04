@@ -3,7 +3,7 @@
 
 <h2>Scores</h2>
 
-<% @workout.scores.each do |score| %>
+<% @scores.each do |score| %>
     <% if score.public? %>
     <%# byebug %>
         <div><%= score.date %></div>
@@ -12,14 +12,9 @@
         <div><%= score.user.first_name %> <%= score.user.last_name %></div>
         <div><%= score.rx_scale %></div>
 
-        <% if @workout.category == "For time" %>
-        <%= score.result_time %>
-        <%#= score.result_time.to_s("%M:%S") %>
-        <% else %>
+        <%= score.result_time.strftime('%M:%S') %>
         <%= score.result_reps %>
-        <% end %>
         <div><%#= score.result_by_category %></div>
-        <%# byebug %>
     <% end %>
 
         <% if score.user == current_user %>

@@ -9,9 +9,9 @@ class ScoresController < ApplicationController
                 redirect_to workouts_path, alert: "Workout not found."
             else
                 if @workout.category == "For time"
-                @scores = Score.order_by_rx.order_by_result_time
+                @scores = Score.order_by_result_time(@workout.name)
                 else
-                     @scores = Score.order_by_result_reps
+                     @scores = Score.order_by_result_reps(@workout.name)
                 end
             end
         else

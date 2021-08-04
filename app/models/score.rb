@@ -2,9 +2,9 @@ class Score < ApplicationRecord
     belongs_to :user
     belongs_to :workout
 
-    scope :order_by_rx, -> {order(:rx)}
-    scope :order_by_result_time, -> {order(result_time: :asc)}
-    scope :order_by_result_reps, -> {order(result_reps: :desc)}
+    #scope :order_by_rx, -> {order(:rx)}
+    scope :order_by_result_time, -> (workout_name) {joins(:workout).where(workout: {name: workout_name}).where(workout: {category: "For time"}).order(:rx, :result_time)}
+    scope :order_by_result_reps, -> (workout_name) {joins(:workout).where(workout: {name: workout_name}).where.not(workout: {category: "For time"}).order(:rx, :result_reps)}
 
     def rx_scale
         if self.rx == false
@@ -33,11 +33,6 @@ class Score < ApplicationRecord
                 self.order(:rx).order(result_reps: :desc)
             end
         end
-    end
-
-    def self.order_by_result_time
-        result = self.select {|w| w.result_time != nil}
-        #byebug
     end
 
 end
