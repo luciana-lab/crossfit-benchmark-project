@@ -1,2 +1,11 @@
-<h1>Edit <%= @workout.name %></h1>
-<%= render 'form' %>
+<div class="container-signup">  
+    <h2>Edit <%= @workout.name %></h2>
+    <hr>
+
+        <div class="col"> 
+            <%= form_for @workout do |f| %>
+                <%= render partial: 'form', locals: { f: f } %>
+                <%= f.submit "Update Workout", {class: "gym-btn"} %>
+            <% end %>
+        </div>
+</div>

@@ -1,39 +1,21 @@
 <%= render partial: 'layouts/error', locals: { object: @workout } %>
 
-<%= form_for @workout do |f| %>
-
-    <div class="form-group">
     <%= f.label :name %>
-    <%= f.text_field :name %>
-    </div>
+    <%= f.text_field :name, {placeholder: "JT", class: "form-group" } %>
 
-    <div class="form-group">
-      <%= f.label :wod_group %>
-        <%= f.text_field :wod_group, list: "group_autocomplete" %>
-        <datalist id="group_autocomplete">
-            <% Workout.all.map(&:wod_group).uniq.each do |select| %>
-                <option value="<%= select %>">
-            <% end %>
-        </datalist>
-    </div>
+    <%= f.label :wod_group %>
+        <%= f.text_field :wod_group, {list: "group_autocomplete", placeholder: "Hero", class: "form-group"} %>
+            <datalist id="group_autocomplete">
+                <% Workout.all.map(&:wod_group).uniq.each do |select| %>
+                    <option value="<%= select %>">
+                <% end %>
+            </datalist>
 
-    <div class="form-group">
     <%= f.label :category %>
-    <%= f.select :category, options_for_select(Workout.all.map {|select| [ select.category ]}.uniq), {prompt: true} %>
-    </div>
+    <%= f.select :category, options_for_select(Workout.all.map {|select| [ select.category ]}.uniq), {prompt: true}, class: "form-group" %>
 
-    <div class="form-group">
     <%= f.label :description %>
-    <%= f.text_area :description %>
-    </div>
+    <%= f.text_area :description, {placeholder: "21-15-9 reps of: Handstand push-ups, Ring dips, Push-ups", class: "form-group"} %>
 
-    <div class="form-group">
     <%= f.label :about %>
-    <%= f.text_area :about %>
-    </div>
-
-    <div class="actions">
-    <%= f.submit "Submit Workout" %>
-    </div>
-
-<% end %>
+    <%= f.text_area :about, {placeholder: "JT is in honor of Navy Petty Officer First Class Jeff Taylor, 30, of Little Creek, VA, who was killed in Afghanistan.", class: "form-group"} %>
