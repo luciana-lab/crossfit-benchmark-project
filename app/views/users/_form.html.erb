@@ -1,33 +1,32 @@
 <%= render partial: 'layouts/error', locals: { object: @user } %>
 
-    <%= form_for(@user, url: signup_path) do |f| %>
-        <span class="req">*</span><%= f.label :email %><br>
-        <%= f.email_field :email, {placeholder: "dave@crossfit.com", class: "user-account"} %><br>
+    <div class="col">
+        <%= f.label :email %><br>
+        <%= f.email_field :email, {placeholder: "dave@crossfit.com (required)" , class: "user-account"} %><br>
 
+        <%= f.label :password %><br>
+        <%= f.password_field :password, {placeholder: "password (required)", class: "user-account"} %><br>
 
-        <span class="req">*</span><%= f.label :password %><br>
-        <%= f.password_field :password, {placeholder: "password", class: "user-account"} %><br>
-        
+        <%= f.label :first_name %><br>
+        <%= f.text_field :first_name, {placeholder: "Dave (required)", class: "user-account"} %><br>
 
-        <span class="req">*</span><%= f.label :first_name %><br>
-        <%= f.text_field :first_name, {placeholder: "Dave", class: "user-account"} %><br>
-
-        <span class="req">*</span><%= f.label :last_name %><br>
-        <%= f.text_field :last_name, {placeholder: "Castro", class: "user-account"} %><br>
+        <%= f.label :last_name %><br>
+        <%= f.text_field :last_name, {placeholder: "Castro (required)", class: "user-account"} %><br>
 
         <%= f.label :age %><br>
         <%= f.number_field :age, {placeholder: 32, class: "user-account"} %><br>
-
-
+        
         <%= f.label :height, "Height (in)" %><br>
         <%= f.number_field :height, {in: 1.00..8.00, step: 0.1, placeholder: "5.11", class: "user-account"} %><br>
 
         <%= f.label :weight, "Weight (lbs)" %><br>
         <%= f.number_field :weight, {placeholder: 171, class: "user-account"} %><br>
-
+        
         <%= f.label :country %><br>
         <%= f.text_field :country, {placeholder: "United States", class: "user-account"} %><br>
+    </div>
 
+    <div class="col">
         <h3>Select Your CrossFit Affiliate Gym:</h3>
             <%= f.collection_select :gym_id, Gym.all, :id, :name, {prompt: true} %>
         <p>If not found, add your gym below: </p>
@@ -44,7 +43,4 @@
                 <%= g.text_field :address, {placeholder: "2617 Broadway, Boulder, CO 80304, United States", class: "user-account"} %>
                 
             <% end %>
-
-        <%= f.submit "Create Account", {class: "user-account-btn"} %>
-
-    <% end %>
+    <div>

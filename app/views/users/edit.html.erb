@@ -1,73 +1,9 @@
-<h1>Edit <%= @user.first_name %> <%= @user.last_name %> Profile</h1>
+<div class="container-signup">
 
-<%#= render 'form' %>
-<%= render partial: 'layouts/error', locals: { object: @user } %>
-
-<%= form_for @user do |f| %>
-    
-    <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-    </div>
-
-    <div class="form-group">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    </div>
-
-    <div class="form-group">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-    </div>
-
-    <div class="form-group">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-    </div>
-
-    <div class="form-group">
-    <%= f.label :age %>
-    <%= f.number_field :age %>
-    </div>
-
-    <div class="form-group">
-    <%= f.label :height, "Height (in)" %>
-    <%= f.number_field :height, in: 1.0..8.0, step: 0.1 %>
-    </div>
-
-    <div class="form-group">
-    <%= f.label :weight, "Weight (lbs)" %>
-    <%= f.number_field :weight %>
-    </div>
-
-    <div class="form-group">
-    <%= f.label :country %>
-    <%= f.text_field :country %>
-    </div>
-
-    <div class="form-group">
-    <h3>Select Your CrossFit Affiliate Gym:</h3>
-        <%= f.collection_select :gym_id, Gym.all, :id, :name, {prompt: true} %>
-    <p>If not found, add your gym below: </p>
-    <%#= render partials: 'gyms/form', locals: { f: g } %>
-        <%= f.fields_for :gym do |g| %>
-            <div class="form-group">
-            <%= g.label :name %>
-            <%= g.text_field :name %>
-            </div>
-
-            <div class="form-group">
-            <%= g.label :website %>
-            <%= g.text_field :website %>
-            </div>
-
-            <div class="form-group">
-            <%= g.label :address %>
-            <%= g.text_field :address %>
-            </div>
+    <h2>Edit <%= @user.first_name %> <%= @user.last_name %> Profile</h2>
+    <hr>
+        <%= form_for @user do |f| %>
+            <%= render partial: 'form', locals: { f: f } %>
+        <%= f.submit "Update Account", {class: "user-account-btn"} %>
         <% end %>
-
-    <div class="actions">
-    <%= f.submit "Update Account" %>
-
-<% end %>
+</div>
