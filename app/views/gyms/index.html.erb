@@ -1,7 +1,15 @@
-<h1>CrossFit Affiliate Gyms</h1>
+<div class="container">
+    <h2>CrossFit Affiliate Gyms</h2>
+    <br>
+    <%= link_to "Add a gym", new_gym_path, {class: "add-gym-btn"} %>
 
-<% @gyms.each do |gym| %>
-    <div><%= link_to gym.name, gym_path(gym) %></div><br>
-<% end %>
+    <hr>
 
-<%= link_to "Add a gym", new_gym_path %>
+    <ul class="gyms">
+        <% @gyms.each do |gym| %>
+            <li>
+                <p><%= link_to gym.name, gym_path(gym), {class: "gyms-link"} %></p>
+            </li>
+        <% end %>
+    </ul>
+</div>
