@@ -285,15 +285,16 @@ div.workouts {
     border-bottom: none;
 }
 
-.workouts li h3 .workout-link {
+.workouts li .workout-link {
     text-decoration: none;
     color: #000;
     display: block;
 }
   
-.workouts li:hover {
+.workouts li .workout-link:hover {
     background: #f6f6f6;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .add-workout-btn {
@@ -303,11 +304,11 @@ div.workouts {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 13%;
+    width: 200px;
     opacity: 0.9;
     position: absolute;
-    top:18%;
-    right: 45%;
+    top: 146px;
+    left: 400px;
     text-align: center;
     text-decoration: none;
     transform: translateY(-50%);
@@ -350,7 +351,7 @@ div.workouts {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 15%;
+    width: 25%;
     opacity: 0.9;
     position: absolute;
     left: 5%;
@@ -363,34 +364,36 @@ div.workouts {
 .edit-score-btn {
     background-color: black;
     color: white;
-    padding: 3.5px 10px;
+    padding: 4px 12px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 3.5%;
+    width: 12%;
     opacity: 0.9;
     position: absolute;
     left: 5.3%;
     text-align: center;
     font-size: 13px;
     text-decoration: none;
+    display: inline-block;
     transform: translateY(-50%);
 }
 
 .delete-score-btn {
     background-color: black;
     color: white;
-    padding: 3.5px 10px;
+    padding: 4px 12px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 4.5%;
+    width: 12%;
     opacity: 0.9;
     position: absolute;
-    left: 9.5%;
+    left: 20%;
     text-align: center;
     font-size: 13px;
     text-decoration: none;
+    display: inline-block;
     transform: translateY(-50%);
 }
 
@@ -401,12 +404,13 @@ div.workouts {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 13%;
+    width: 20%;
     opacity: 0.9;
     position: absolute;
     top: 29%;
     right: 50%;
     text-align: center;
     text-decoration: none;
+    display: inline-block;
     transform: translateY(-50%);
 }
