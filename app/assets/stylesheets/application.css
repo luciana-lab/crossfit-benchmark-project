@@ -225,7 +225,7 @@ hr {
     margin-bottom: 25px;
 }
 
-.user-account {
+.form-group {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -247,5 +247,18 @@ hr {
 
 .user-account-btn:hover,
 .google-btn:hover,
-.fb-btn { opacity: 1;}
+.fb-btn:hover,
+.gym-btn:hover { opacity: 1;}
 
+/* Gym Page */
+
+.gym-btn {
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}

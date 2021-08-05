@@ -1,15 +1,8 @@
-<%# not recognizing "f" when try to create Gym %>
-    <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    </div>
+<%= f.label :name %><br>
+<%= f.text_field :name, {placeholder: "Crossfit", class: "form-group"} %><br>
 
-    <div class="form-group">
-    <%= f.label :website %>
-    <%= f.text_field :website %>
-    </div>
+<%= f.label :website %><br>
+<%= f.text_field :website, {placeholder: "crossfit.com", class: "form-group"} %><br>
 
-    <div class="form-group">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-    </div>
+<%= f.label :address %><br>
+<%= f.text_field :address, {placeholder: "2617 Broadway, Boulder, CO 80304, United States", class: "form-group"} %><br>
