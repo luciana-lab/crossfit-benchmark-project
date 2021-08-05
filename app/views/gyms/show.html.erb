@@ -1,20 +1,31 @@
-<h1><%= @gym.name %></h1>
+<div class="container">
+    <div class="gym-show">
+        <h2><%= link_to @gym.name, "http://#{@gym.website}", {target: "_blank", class: "gym-ext-link"} %></h2>
+        <p>Address: <%= @gym.address %></p>
+    <div>
+    <br>
 
-<div>Visit <%= link_to "Website","http://#{@gym.website}", target: "_blank" %></div>
+        <% if current_user_belongs_to_gym %>
+            <%= link_to "Edit Gym", edit_gym_path(@gym), class: "edit-gym-btn" %>
+            <%= link_to "Delete Gym", gym_path(@gym), method: 'delete', data: { confirm: "Are you sure? All #{@gym.name}'s Athletes will also be deleted" }, class: "delete-gym-btn" %>
+            <br><br>
+        <% end %>
 
-<div><%= @gym.address %></div>
-<br>
+    <hr>
 
-<% if current_user_belongs_to_gym %>
-    <%= link_to "Edit Gym", edit_gym_path(@gym) %>
-    <%= link_to "Delete Gym", gym_path(@gym), method: 'delete', data: { confirm: "Are you sure? All #{@gym.name}'s Athletes will also be deleted" } %>
-<% end %>
+    <h3>Athletes:</h3>
+        <% if current_user_belongs_to_gym %>
+            <%= link_to "Leave", leave_gym_path(@gym), class: "leave-gym-btn" %>
+        <% else %>
+            <%= link_to "Join", join_gym_path(@gym), class: "join-gym-btn" %>
+        <% end %>
+        <br><br>
 
-<h3>Athletes:</h3>
-
-<%= link_to "Join", join_gym_path(@gym) %>
-<%= link_to "Leave", leave_gym_path(@gym) %>
-
-<% @gym.users.each do |user| %>
-    <%= user.first_name %> <%= user.last_name %>
-<% end %>
+        <% @gym.users.each do |user| %>
+            <ul class="workout-show">
+                <li>
+                    <p><%= user.first_name %> <%= user.last_name %></p>
+                </li>
+            </ul>
+        <% end %>
+</div>

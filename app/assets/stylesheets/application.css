@@ -468,3 +468,87 @@ div.workouts {
     text-decoration: none;
     transform: translateY(-50%);
 }
+
+/* Gym Show Page */
+.gym-show .gym-ext-link {
+    text-decoration: none;
+    color: #000;
+    display: block;
+}
+
+.gym-show p {
+    font: 200 15px/1.5 Helvetica, Verdana, sans-serif;
+    margin: 0; 
+}
+
+.edit-gym-btn {
+    background-color: black;
+    color: white;
+    padding: 4px 12px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 12%;
+    opacity: 0.9;
+    position: absolute;
+    left: 2.4%;
+    text-align: center;
+    font-size: 13px;
+    text-decoration: none;
+    display: inline-block;
+    transform: translateY(-50%);
+}
+
+.delete-gym-btn {
+    background-color: black;
+    color: white;
+    padding: 4px 12px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 12%;
+    opacity: 0.9;
+    position: absolute;
+    left: 20%;
+    text-align: center;
+    font-size: 13px;
+    text-decoration: none;
+    display: inline-block;
+    transform: translateY(-50%);
+}
+
+.join-gym-btn {
+    background-color: #74ad5a;
+    color: white;
+    padding: 4px 12px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 12%;
+    opacity: 0.9;
+    position: absolute;
+    left: 2.4%;
+    text-align: center;
+    font-size: 13px;
+    text-decoration: none;
+    display: inline-block;
+    transform: translateY(-50%);
+}
+
+.leave-gym-btn {
+    background-color: #d0451b;
+    color: white;
+    padding: 4px 12px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 12%;
+    opacity: 0.9;
+    position: absolute;
+    left: 2.4%;
+    text-align: center;
+    font-size: 13px;
+    text-decoration: none;
+    display: inline-block;
+    transform: translateY(-50%);
+}
