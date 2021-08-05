@@ -25,19 +25,9 @@
             
 
             <%= form_for :user, url: '/login' do |f| %>
-                <div class="login">
-                    <%#= f.label :email %>
-                    <%= f.email_field :email, placeholder: "Email" %>
-                </div>
-
-                <div class="login">
-                    <%#= f.label :password %>
-                    <%= f.password_field :password, placeholder: "Password" %>
-                </div>
-
-                <div class="login">
-                <%= f.submit "Log In", {class: "login-btn"} %>
-                </div>
+                <%= f.email_field :email, {placeholder: "Email", class: "user-account"} %>
+                <%= f.password_field :password, {placeholder: "Password", class: "user-account"} %>
+                <%= f.submit "Log In", {class: "user-account-btn"} %>
             <% end %>
             <br>
              <%= link_to "Don't have an account?", signup_path %>

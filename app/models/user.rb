@@ -3,6 +3,7 @@ class User < ApplicationRecord
     has_many :scores
     has_many :workouts, through: :scores
     validates :email, presence: true, uniqueness: true
+    validates :first_name, :last_name, presence: true
     has_secure_password
     #accepts_nested_attributes_for :gym #gym_attributes=
 
