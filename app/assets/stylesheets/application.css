@@ -331,3 +331,39 @@ div.workouts {
     display: inline-block;
     cursor: pointer;
 }
+
+/* Workout Show Page */
+.workout-show {
+    list-style-type: none;
+    width: 100%;
+    margin: 0;
+}
+
+.workout-show li p {
+    font: 200 14px/1.5 Helvetica, Verdana, sans-serif;
+    margin: 0; 
+}
+  
+.workout-show li {
+    padding: 10px;
+    overflow: auto;
+    margin: 0; 
+    border-bottom: none;
+}
+
+.score-btn {
+    background-color: black;
+    color: white;
+    padding: 9px 21px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 15%;
+    opacity: 0.9;
+    position: absolute;
+
+    left: 5%;
+    text-align: center;
+    text-decoration: none;
+    transform: translateY(-50%);
+}

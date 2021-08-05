@@ -1,9 +1,5 @@
-<li>
-    <h3><%= link_to workout.name, workout_path(workout), {class: "workout-link"} %></h3>
     <p><%= workout.wod_group %></p>
     <p><%= workout.category %></p>
     <% workout.description.split(/[\,\:]/).each do |value| %>
         <p><%= value %></p>
-    <% end %>   
-    <p><%= workout.about %></p><br>
-</li>
+    <% end %>

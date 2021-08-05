@@ -1,12 +1,21 @@
-<h1><%= @workout.name %></h1>
+<div class="container-signup">
+    <h2><%= @workout.name %></h2>
+    <hr>
 
-<%= render @workout %>
+        <ul class="workout-show">
+            <li>
+                <%= render @workout %>
+                <br>
+                <p><%= @workout.about %></p>
+            </li>
+        </ul>
 
-<%# add it inside Helper %>
-<% if logged_in? && @workout.scores.blank? %>
-    <%= link_to "Edit Workout", edit_workout_path(@workout) %>
-    <%= button_to "Delete Workout", workout_path(@workout), method: :delete, data: { confirm: "Are you sure?" } %>
-<% end %>
-<br>
+        <%# add it inside Helper %>
+        <% if logged_in? && @workout.scores.blank? %>
+            <%= link_to "Edit Workout", edit_workout_path(@workout) %>
+            <%= button_to "Delete Workout", workout_path(@workout), method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
+        <br>
 
-<%= link_to "See #{@workout.name}'s scores", workout_scores_path(@workout) %>
+        <%= link_to "Check Scores", workout_scores_path(@workout), class: "score-btn" %>
+</div>

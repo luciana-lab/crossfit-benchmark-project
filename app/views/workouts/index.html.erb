@@ -14,7 +14,12 @@
         <hr>
     
         <ul class="workouts">
-            <%= render partial: 'workout', collection: @workouts %>
+            <% @workouts.each do | workout| %>
+                <li>
+                    <h3><%= link_to workout.name, workout_path(workout), {class: "workout-link"} %></h3>
+                    <%= render partial: 'workout', locals: { workout: workout } %>
+            <% end %>
+                </li>
         </ul>
     </div>
 </div>
