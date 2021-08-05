@@ -1,9 +1,13 @@
-<h1>Edit <%= @gym.name %></h1>
+<div class="container-signup">
+    <h2>Edit <%= @gym.name %></h2>
+    <hr>
 
-<%= form_for @gym do |f| %>
-    <%= render partial: 'form', locals: { f: f } %>
+        <%= render partial: 'layouts/error', locals: { object: @gym } %>
 
-    <div class="actions">
-    <%= f.submit "Update Gym" %>
-    </div>
-<% end %>
+        <div class="col">
+            <%= form_for @gym do |f| %>
+                <%= render partial: 'form', locals: { f: f } %>
+                <%= f.submit "Update Gym", {class: "gym-btn"} %>
+            <% end %>
+        </div>
+</div>
