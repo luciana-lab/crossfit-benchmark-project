@@ -1,4 +1,15 @@
-<h1>Your <%= @workout.name %>'s Score</h1>
-<%= render partial: 'workouts/workout', locals: {workout: @workout} %>
+<div class="container-signup">  
+    <h2>Your <%= @workout.name %>'s Score</h2>
+        <%= render partial: 'workouts/workout', locals: {workout: @workout} %>
+        <hr>
 
-<%= render 'form' %>
+        <div class="col">
+            <%= form_for([@workout, @score]) do |f| %>
+                <%= f.hidden_field :user_id, value: current_user.id %>
+                <%= f.hidden_field :workout_id, value: @workout.id %>
+                
+                <%= render partial: 'form', locals: { f: f } %>
+                <%= f.submit "Add Score", {class: "gym-btn"} %>
+            <% end %>
+        </div>
+</div>

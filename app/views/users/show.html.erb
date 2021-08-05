@@ -17,7 +17,8 @@
     <div><%= link_to score.workout.name, workout_scores_path(score.workout) %></div>
     <div><%= score.date %></div>
     <div><%= score.rx_scale %></div>
-    <div><%= score.result_by_category %></div>
+    <div><%#= score.result_by_category %></div>
+    <div><%= format_time score.result_time, :time %></div>
     <div><%= score.notes %></div>
     <div><%= score.public? %></div>
     <div><%= link_to "Edit Score", edit_score_path(score) %></div>

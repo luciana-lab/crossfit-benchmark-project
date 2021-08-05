@@ -1,42 +1,40 @@
 <%= render partial: 'layouts/error', locals: { object: @score } %>
 
-<%= form_for([@workout, @score]) do |f| %>
+<%#= form_for([@workout, @score]) do |f| %>
 
-    <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.hidden_field :workout_id, value: @workout.id %>
 
-    <div class="form-group">
+
     <%= f.label :date %>
-    <%= f.date_select :date %>
-    </div>
+    <%= f.date_select :date, class: "form-group" %>
+    <br>
 
-    <div class="form-group">
     <%= f.label :rx, "Check if you did it as RX standard" %>
-    <%= f.check_box :rx %>
-    </div>
+    <label class="switch">
+        <input type="checkbox" value="true" checked>
+        <input type="checkbox" value="false">
+        <%# byebug %>
+        <span class="slider round"><%= f.check_box :rx %></span>
+        
+    </label>
+    <br>
 
     <%# add it to helper method %>
-    <div class="form-group">
-    <% if @workout.category == "For time" %>
+    <% if @score.workout.category == "For time" %>
         <%= f.label :result_time, "Your time" %>
-        <%= f.time_select :result_time, :discard_hour => true, :default => {:minute => '00', :second => '00'}, :include_seconds => true %>
+        <%= f.time_select :result_time, :discard_hour => true, :default => {:minute => '00', :second => '00'}, :include_seconds => true, class: "form-group" %>
     <% else %>
         <%= f.label :result_reps, "Total number of reps" %>
-        <%= f.number_field :result_reps %>
+        <%= f.number_field :result_reps, class: "form-group" %>
     <% end %>
-    </div>
 
-    <div class="form-group">
+
     <%= f.label :notes %>
-    <%= f.text_field :notes %>
-    </div>
+    <%= f.text_field :notes, class: "form-group" %>
 
-    <div class="form-group">
     <%= f.label :public, "Check if you want to make this score to be public" %>
     <%= f.check_box :public %>
 
-    <div class="actions">
-    <%= f.submit "Add Score" %>
-    </div>
 
-<% end %>
+    <%#= f.submit "Add Score" %>
+
+<%# end %>
