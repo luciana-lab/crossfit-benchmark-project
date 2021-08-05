@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     margin: 0;
 }
 
@@ -101,7 +101,8 @@ body {
     cursor: pointer;
 }
 
-.search-btn:hover { background-color: rgb(48, 48, 49); }
+.search-btn:hover,
+.add-workout-btn:hover { background-color: rgb(48, 48, 49); }
 
 .content-welcome {
     width: 200px;
@@ -109,18 +110,18 @@ body {
     text-align: center;
 }
 
-ul {
+.welcome {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-li {
+.welcome li {
     font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
     border-bottom: 1px solid #ccc;
 }
 
-li .search-workouts-link {
+.welcome li .search-workouts-link {
     text-decoration: none;
     color: #000;
     transition: font-size 0.3s ease, background-color 0.3s ease;
@@ -128,7 +129,7 @@ li .search-workouts-link {
     width: 200px;
 }
 
-li .search-workouts-link:hover {
+.welcome li .search-workouts-link:hover {
   font-size: 30px;
   background: #f6f6f6;
 }
@@ -260,4 +261,73 @@ hr {
     cursor: pointer;
     width: 100%;
     opacity: 0.9;
+}
+
+/* Workouts Index Page */
+
+div.workouts {
+    margin: 0px;
+}
+  
+.workouts {
+    list-style-type: none;
+    width: 500px;
+    margin: 0;
+}
+  
+.workouts li h3 {
+    font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+    color: #000;
+    margin: 0; 
+}
+  
+.workouts li p {
+    font: 200 12px/1.5 Helvetica, Verdana, sans-serif;
+    margin: 0; 
+}
+  
+.workouts li {
+    padding: 10px;
+    overflow: auto;
+    margin: 0; 
+    border-bottom: none;
+}
+
+.workouts li h3 .workout-link {
+    text-decoration: none;
+    color: #000;
+    display: block;
+}
+  
+.workouts li:hover {
+    background: #f6f6f6;
+    cursor: pointer;
+}
+
+.add-workout-btn {
+    background-color: black;
+    color: white;
+    padding: 9px 21px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 13%;
+    opacity: 0.9;
+    position: absolute;
+    top:18%;
+    right: 45%;
+    text-align: center;
+    text-decoration: none;
+    transform: translateY(-50%);
+}
+
+.filter-btn {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border: none;
+    padding: 3.5px 12px;
+    display: inline-block;
+    cursor: pointer;
 }

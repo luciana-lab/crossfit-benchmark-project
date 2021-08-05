@@ -1,7 +1,9 @@
-<div><%= link_to workout.name, workout_path(workout) %></div>
-<div><%= workout.wod_group %></div>
-<div><%= workout.category %></div>
-<% workout.description.split(/[\,\:]/).each do |value| %>
-    <div><%= value %></div>
-<% end %>   
-<div><%= workout.about %></div><br>
+<li>
+    <h3><%= link_to workout.name, workout_path(workout), {class: "workout-link"} %></h3>
+    <p><%= workout.wod_group %></p>
+    <p><%= workout.category %></p>
+    <% workout.description.split(/[\,\:]/).each do |value| %>
+        <p><%= value %></p>
+    <% end %>   
+    <p><%= workout.about %></p><br>
+</li>

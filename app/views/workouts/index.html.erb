@@ -1,21 +1,20 @@
-<h1>Workouts</h1>
+<div class="container-signup">  
+    <h2>Workouts</h2>
 
-<!-- Filter by Category:
-<%= form_tag(workouts_path, method: "get") do %>
-    <%= collection_select :workout, :category, Workout.select(:category).distinct, :category, :category, prompt: true %>
-    <%= submit_tag "Filter" %>
-<% end %>
-<br> -->
 
-Filter by Group:
-<%= form_tag(workouts_path, method: "get") do %>
-    <%= collection_select :workout, :wod_group, Workout.select(:wod_group).distinct, :wod_group, :wod_group, prompt: true %>
-    <%= submit_tag "Filter" %>
-<% end %>
-<br>
+    Filter by Group:
+        <%= form_tag(workouts_path, method: "get") do %>
+            <%= collection_select :workout, :wod_group, Workout.select(:wod_group).distinct, :wod_group, :wod_group, prompt: true %>
+            <%= submit_tag "Filter", class: "filter-btn" %>
+        <% end %>
+        <br>
 
-<div>
-    <%= render partial: 'workout', collection: @workouts %>
+        <%= link_to "Add a workout", new_workout_path, {class: "add-workout-btn"} %>
+        
+        <hr>
+    
+        <ul class="workouts">
+            <%= render partial: 'workout', collection: @workouts %>
+        </ul>
+    </div>
 </div>
-
-<%= link_to "Add a workout", new_workout_path %>

@@ -14,7 +14,7 @@
     <% else %>
         <h2><%= params[:search] %></h2>
         <% @workouts.each do |workout| %>
-            <ul>
+            <ul class="welcome">
             <li><%= link_to workout.name, workout_path(workout), {class: "search-workouts-link"} %></li>
             </ul>
         <% end %>
