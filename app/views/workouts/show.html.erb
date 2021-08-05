@@ -1,4 +1,4 @@
-<div class="container-signup">
+<div class="container">
     <h2><%= @workout.name %></h2>
     <hr>
 
@@ -12,10 +12,12 @@
 
         <%# add it inside Helper %>
         <% if logged_in? && @workout.scores.blank? %>
-            <%= link_to "Edit Workout", edit_workout_path(@workout) %>
-            <%= button_to "Delete Workout", workout_path(@workout), method: :delete, data: { confirm: "Are you sure?" } %>
+            <br>
+            <%= link_to "Edit", edit_workout_path(@workout), class: "edit-score-btn" %>
+            <%= button_to "Delete", workout_path(@workout), method: :delete, data: { confirm: "Are you sure?" }, class: "delete-score-btn" %>
+            <br><br><br>
         <% end %>
-        <br>
-
+        
+        
         <%= link_to "Check Scores", workout_scores_path(@workout), class: "score-btn" %>
 </div>

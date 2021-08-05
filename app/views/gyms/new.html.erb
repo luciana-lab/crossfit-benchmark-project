@@ -1,9 +1,9 @@
-<div class="container-signup">
+<div class="container">
     <h2>Create Gym</h2>
     <hr>
 
         <%= render partial: 'layouts/error', locals: { object: @gym } %>
-        
+
         <div class="col">  
             <%= form_for @gym do |f| %>
                 <%= render partial: 'form', locals: { f: f } %>

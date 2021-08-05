@@ -1,23 +1,38 @@
-<h1><%= @workout.name %>'s Scores</h1>
-<%= render partial: 'workouts/workout', locals: {workout: @workout} %>
-
-<h2>Scores</h2>
-
-<% @scores.each do |score| %>
-    <% if score.public? %>
-        <div><%= format_date score.date %></div>
-        <div><%= score.user.first_name %> <%= score.user.last_name %></div>
-        <div><%= score.rx_scale %></div>
-        <div><%= format_time score.result_time, :time %></div>
-        <div><%= score.result_reps %></div>
-    <% end %>
-
-        <% if score.user == current_user %>
-            <div><%= link_to "Edit Score", edit_score_path(score) %></div>
-            <div><%= link_to "Delete Score", score_path(score), method: 'delete' %></div><br>
-        <% end %>
+<div class="container">
+    <h2><%= @workout.name %>'s Scores</h2>
     
-    <br>
-<% end %>
+        <ul class="workout-show">
+            <li>
+                <%= render partial: 'workouts/workout', locals: {workout: @workout} %>
+            </li>
+        </ul>
+    <hr>
 
-<%= link_to "Add your score", new_workout_score_path %>
+    <h3>Leaderboard</h3>
+
+        <% @scores.each do |score| %>
+            <% if score.public? %>
+                <ul class="workout-show">
+                <li>
+                    <p>Athlete: <strong><%= score.user.first_name %> <%= score.user.last_name %></strong></p>
+                    <p><strong><%= score.rx_scale %></strong></p>
+                    <% if score.workout.category == "For time" %>
+                        <p>Time: <strong><%= format_time score.result_time, :time %></strong></p>
+                    <% else %>
+                        <p><strong><%= score.result_reps %> reps</strong></p>
+                    <% end %>
+                    <p><%= format_date score.date %></p>
+                </li>
+            <% end %>
+
+            <% if score.user == current_user %>
+                <%= link_to "Edit", edit_score_path(score), class: "edit-score-btn" %>
+                <%= link_to "Delete", score_path(score), method: 'delete', class: "delete-score-btn" %>
+                <br>
+            <% end %>
+                </ul>
+                <br>
+        <% end %>
+
+    <%= link_to "Add your score", new_workout_score_path, class: "add-score-btn" %>
+</div>
