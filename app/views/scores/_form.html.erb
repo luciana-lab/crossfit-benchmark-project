@@ -1,40 +1,24 @@
 <%= render partial: 'layouts/error', locals: { object: @score } %>
 
-<%#= form_for([@workout, @score]) do |f| %>
-
-
-
     <%= f.label :date %>
     <%= f.date_select :date, class: "form-group" %>
-    <br>
+    <br><br>
 
-    <%= f.label :rx, "Check if you did it as RX standard" %>
-    <label class="switch">
-        <input type="checkbox" value="true" checked>
-        <input type="checkbox" value="false">
-        <%# byebug %>
-        <span class="slider round"><%= f.check_box :rx %></span>
-        
-    </label>
-    <br>
+    <%= f.label :rx, "RX Standard?" %>
+    <%= f.check_box :rx %>
+    <br><br>
 
     <%# add it to helper method %>
     <% if @score.workout.category == "For time" %>
         <%= f.label :result_time, "Your time" %>
-        <%= f.time_select :result_time, :discard_hour => true, :default => {:minute => '00', :second => '00'}, :include_seconds => true, class: "form-group" %>
+        <%= f.time_select :result_time, :discard_hour => true, :default => {:minute => '00', :second => '00'}, :include_seconds => true %><br><br>
     <% else %>
         <%= f.label :result_reps, "Total number of reps" %>
         <%= f.number_field :result_reps, class: "form-group" %>
     <% end %>
 
-
     <%= f.label :notes %>
-    <%= f.text_field :notes, class: "form-group" %>
+    <%= f.text_field :notes, {placeholder: "35# barbell, box jump pull-ups", class: "form-group"} %>
 
     <%= f.label :public, "Check if you want to make this score to be public" %>
     <%= f.check_box :public %>
-
-
-    <%#= f.submit "Add Score" %>
-
-<%# end %>
