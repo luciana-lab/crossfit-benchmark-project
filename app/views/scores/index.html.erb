@@ -14,7 +14,12 @@
             <% if score.public? %>
                 <ul class="workout-show">
                 <li>
-                    <p>Athlete: <strong><%= score.user.first_name %> <%= score.user.last_name %></strong></p>
+                    <%# <p>Athlete: <strong><%= score.user.first_name unless score.user.blank? || score.user.first_name.blank? %> <%= score.user.last_name unless score.user.blank? || score.user.last_name.blank?%></strong></p>
+                    <% if score.user.blank? %>
+                        <p>Athlete: --</p>
+                    <%else %>
+                        <p>Athlete: <strong><%= score.user.first_name %> <%= score.user.last_name %></strong></p>
+                    <% end %>
                     <p><strong><%= score.rx_scale %></strong></p>
                     <% if score.workout.category == "For time" %>
                         <p>Time: <strong><%= format_time score.result_time, :time %></strong></p>
