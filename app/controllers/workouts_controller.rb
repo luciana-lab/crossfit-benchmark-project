@@ -4,14 +4,12 @@ class WorkoutsController < ApplicationController
 
     def index
         if params[:category]
-            @workouts = Workout.where(category: params[:category])
+            #params[:category]
+            #@workouts = Workout.where(category: params[:category])
+            @workouts = Workout.category_nav_selector(params[:category])
         else
             @workouts = Workout.all
         end
-        # @workouts = Workout.all
-        # if params[:workout] && !params[:workout][:category].blank?
-        #     @workouts = Workout.category_selector(params[:workout][:category])
-        # end
         if params[:workout] && !params[:workout][:wod_group].blank?
             @workouts = Workout.wod_group_selector(params[:workout][:wod_group])
         end

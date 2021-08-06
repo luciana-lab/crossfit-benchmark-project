@@ -14,9 +14,9 @@ class ScoresController < ApplicationController
                      @scores = Score.order_by_result_reps(@workout.name)
                 end
             end
-        else
+        #else
             # if @workout.category == "For time"
-                @scores = Score.order_by_rx_and_result
+                #@scores = Score.order_by_rx_and_result
             # else
             #     @scores = Score.order_by_rx.order_by_result_reps
             # end
@@ -34,6 +34,7 @@ class ScoresController < ApplicationController
 
     def create
         @score = Score.new(score_params)
+        @score.user = current_user
         if params[:workout_id]
             @workout = Workout.find(params[:workout_id])
         end
@@ -45,6 +46,10 @@ class ScoresController < ApplicationController
     end
 
     def edit
+        # byebug
+        if @score.user != current_user
+            redirect_to workouts_path
+        end
     end
 
     def update

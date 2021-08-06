@@ -10,7 +10,7 @@
             </li>
         </ul>
 
-        <%# add it inside Helper %>
+        <%# add it inside Helper? %>
         <% if logged_in? && @workout.scores.blank? %>
             <br>
             <%= link_to "Edit", edit_workout_path(@workout), class: "edit-score-btn" %>

@@ -4,25 +4,9 @@
     <ul class="profile">
         <li>
             <p><%= @user.email %></p>
-            <% if @user.country? %>
-                <p>Country: <%= @user.country %></p>
-            <% end %>
-            <% if @user.age? %>
-                <p>Age: <%= @user.age %></p>
-            <% end %>
-            <% if @user.height? %>
-                <p>Height: <%= @user.height %></p>
-            <% end %>
-            <% if @user.weight? %>
-                <p>Weight: <%= @user.weight %></p>
-            <% end %>
-            
-            <% if @user.gym %>
-                <h4>Gym Affiliate: <%= link_to @user.gym.name, gym_path(@user.gym), class:"profile-gym-link" %></h4>
-            <% end %>
+            <%= render 'user' %>
         </li>
     </ul>
-
             <%= link_to "Edit Profile", edit_user_path(@user), class:"edit-score-btn" %>
             <%= link_to "Delete Profile", user_path(@user), method: 'delete', class:"delete-score-btn" %>
             <br><br>
@@ -33,16 +17,9 @@
         <% @user.scores.each do |score| %>
             <ul class="workout-show">
                 <li>    
-                    <h4><%= link_to score.workout.name, workout_scores_path(score.workout, class:"profile-gym-link"), class:"profile-gym-link" %></h4>
-                    <p><strong><%= score.rx_scale %></p></strong>
-                    <% if score.workout.category == "For time" %>
-                        <p>Time: <strong><%= format_time score.result_time, :time %></strong></p>
-                    <% else %>
-                        <p><strong><%= score.result_reps %> reps</strong></p>
-                    <% end %>
-                    <p><%= score.notes %></p>
-                    <p><%= format_date score.date %></p>
-                    <p><%= score.public_private %></p>
+                    <h4><%= link_to score.workout.name, workout_scores_path(score.workout), class:"profile-gym-link" %></h4>
+                        <%= render partial: 'scores/score', locals: { score: score } %>
+                    <p><%= helper_public_private(score) %></p> <%#= score.public_private %>
                     <br>
 
                     <%= link_to "Edit Score", edit_score_path(score), class:"edit-score-btn" %></p>

@@ -1,0 +1,19 @@
+<% if @user.country? %>
+    <p>Country: <%= @user.country %></p>
+<% end %>
+
+<% if @user.age? %>
+    <p>Age: <%= @user.age %></p>
+<% end %>
+
+<% if @user.height? %>
+    <p>Height: <%= @user.height %></p>
+<% end %>
+
+<% if @user.weight? %>
+    <p>Weight: <%= @user.weight %></p>
+<% end %>
+            
+<% if @user.gym %>
+    <h4>Gym Affiliate: <%= link_to @user.gym.name, gym_path(@user.gym), class:"profile-gym-link" %></h4>
+<% end %>

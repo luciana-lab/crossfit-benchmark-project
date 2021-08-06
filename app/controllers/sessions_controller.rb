@@ -17,10 +17,8 @@ class SessionsController < ApplicationController
         user = User.from_omniauth(auth)
         if user.valid?
             session[:user_id] = user.id
-            flash[:message] = "Successful Login!!"
             redirect_to user_path(user)
         else
-            flash[:message] = "Oh no! Not Login :("
             redirect_to root_path
         end
     end

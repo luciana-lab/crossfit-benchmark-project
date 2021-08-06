@@ -1,43 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Crossfit Benchmark Project</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
+    <head>
+      <title>Crossfit Benchmark Project</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+          <%= csrf_meta_tags %>
+          <%= csp_meta_tag %>
 
-  <body>
-    <div class="navbar">
-        <div class="a"><%= link_to "HOME", root_path %></div>
-        <div class="dropdown">
-          <button class="dropbtn">WORKOUTS
-            <i class="fa fa-caret-down"></i>
-          </button>
-          <div class="dropdown-content">
-            <div class="a"><%= link_to "FOR TIME", workouts_path(category: "For time") %></div>
-            <div class="a"><%= link_to "AMRAP", workouts_path(category: "AMRAP") %></div>
-            <div class="a"><%= link_to "EMOM", workouts_path(category: "EMOM") %></div>
-            <div class="a"><%= link_to "ALL", workouts_path %></div>
-          </div>
-        </div>
-        <div class="a"><%= link_to "GYMS", gyms_path %></div>
-        <% if logged_in? %>
-          <div class="a"><%= link_to "PROFILE", user_path(current_user.id) %></div>
-          <div class="a"><%= link_to "LOG OUT", logout_path, method: 'delete' %></div>
-        <% else %>
-          <div class="a"><%= link_to "SIGN UP", signup_path %></div>
-          <div class="a"><%= link_to "LOG IN", login_path %></div>
-          <%#= button_to "LOG IN WITH GOOGLE", '/auth/google_oauth2' %>
-        <% end %>
-        <%flash.each do |type, msg| %>
-          <%= msg %>
-        <% end %>
-    </div>
-    <%= yield %>
-  </body>
+          <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+          <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+
+      <%= render 'layouts/navigation' %>
+
+      <div id="main-container">
+        <%= yield %>
+      </div>
+    
+      <footer>
+      
+        
+          <small>&copy; 2021 <strong>CrossFit Benchmark Corporation.</strong> All Rights Reserved.</small>
+        
+      
+      </footer>
+    </body> 
 </html>
