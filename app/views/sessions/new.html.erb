@@ -1,7 +1,9 @@
 <div class="container">
     <div class="row">
+        
         <h2 style="text-align:center">Login with Google or Manually</h2>
         <hr>
+        
         <div class="vl">
             <span class="vl-innertext">or</span>
         </div>
@@ -23,7 +25,6 @@
                 <%= msg %>
             <% end %>
             </span>
-            
 
             <%= form_for :user, url: '/login' do |f| %>
                 <%= f.email_field :email, {placeholder: "Email", class: "form-group"} %>
@@ -31,7 +32,8 @@
                 <%= f.submit "Log In", {class: "user-account-btn"} %>
             <% end %>
             <br>
-             <%= link_to "Don't have an account?", signup_path %>
+             
+            <%= link_to "Don't have an account?", signup_path %>
         </div>
     </div>
 </div>

@@ -5,5 +5,13 @@ module ScoresHelper
 
     def format_date(date, format = :long)
         date.blank? ? '' : date.to_s(format)
-      end
+    end
+    
+    # def rx_scale(score)
+    #     if score.rx == false
+    #         score.rx = "Scale"
+    #     else
+    #         score.rx = "RX"
+    #     end
+    # end
 end

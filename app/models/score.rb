@@ -16,16 +16,24 @@ class Score < ApplicationRecord
         end
     end
 
-    def result_by_category
-        # if self.workout.category == "For time"
-            self.result_time.strftime('%M:%S')
-        # end
+    def public_private
+        if self.public?
+            "Public Score: everyone can see it."
+        else
+            "Private Score: only you can see it."
+        end
     end
 
-    def result_time_formatted
-        # self.result_time.strftime("%M:%S")
-        self.result_time.to_s(:time)
-    end
+    # def result_by_category
+    #     # if self.workout.category == "For time"
+    #         self.result_time.strftime('%M:%S')
+    #     # end
+    # end
+
+    # def result_time_formatted
+    #     # self.result_time.strftime("%M:%S")
+    #     self.result_time.to_s(:time)
+    # end
 
     # def self.order_by_rx_and_result
     #     Workout.all.each do |w|

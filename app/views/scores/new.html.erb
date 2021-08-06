@@ -1,7 +1,8 @@
 <div class="container">  
+    
     <h2>Your <%= @workout.name %>'s Score</h2>
         <%= render partial: 'workouts/workout', locals: {workout: @workout} %>
-        <hr>
+    <hr>
 
         <div class="col">
             <%= form_for([@workout, @score]) do |f| %>

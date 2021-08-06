@@ -1,27 +1,54 @@
-<h2><%= @user.first_name %> <%= @user.last_name %> Profile Page</h2>
+<div class="container">
+    <h2><%= @user.first_name %> <%= @user.last_name %> Profile Page</h2>
 
-<% if @user.gym %>
-    <h3>Gym Affiliate: <%= link_to @user.gym.name, gym_path(@user.gym) %></h3>
-<% end %>
+    <ul class="profile">
+        <li>
+            <p><%= @user.email %></p>
+            <% if @user.country? %>
+                <p>Country: <%= @user.country %></p>
+            <% end %>
+            <% if @user.age? %>
+                <p>Age: <%= @user.age %></p>
+            <% end %>
+            <% if @user.height? %>
+                <p>Height: <%= @user.height %></p>
+            <% end %>
+            <% if @user.weight? %>
+                <p>Weight: <%= @user.weight %></p>
+            <% end %>
+            
+            <% if @user.gym %>
+                <h4>Gym Affiliate: <%= link_to @user.gym.name, gym_path(@user.gym), class:"profile-gym-link" %></h4>
+            <% end %>
+        </li>
+    </ul>
 
-    <li><%= @user.email %></li>
-    <li><%= @user.country %></li>
-    <li>Age: <%= @user.age %></li>
-    <li>Height: <%= @user.height %></li>
-    <li>Weight: <%= @user.weight %></li>
-    <%= link_to "Edit Profile", edit_user_path(@user) %>
-    <%= link_to "Delete Profile", user_path(@user), method: 'delete' %>
-<br>
+            <%= link_to "Edit Profile", edit_user_path(@user), class:"edit-score-btn" %>
+            <%= link_to "Delete Profile", user_path(@user), method: 'delete', class:"delete-score-btn" %>
+            <br><br>
+        <hr>
 
-<% @user.scores.each do |score| %>
-    <div><%= link_to score.workout.name, workout_scores_path(score.workout) %></div>
-    <div><%= score.date %></div>
-    <div><%= score.rx_scale %></div>
-    <div><%#= score.result_by_category %></div>
-    <div><%= format_time score.result_time, :time %></div>
-    <div><%= score.notes %></div>
-    <div><%= score.public? %></div>
-    <div><%= link_to "Edit Score", edit_score_path(score) %></div>
-    <div><%= link_to "Delete Score", score_path(score), method: 'delete' %></div>
-    <br>
-<% end %>
+    <h3>Your Workout Scores</h3>
+
+        <% @user.scores.each do |score| %>
+            <ul class="workout-show">
+                <li>    
+                    <h4><%= link_to score.workout.name, workout_scores_path(score.workout, class:"profile-gym-link"), class:"profile-gym-link" %></h4>
+                    <p><strong><%= score.rx_scale %></p></strong>
+                    <% if score.workout.category == "For time" %>
+                        <p>Time: <strong><%= format_time score.result_time, :time %></strong></p>
+                    <% else %>
+                        <p><strong><%= score.result_reps %> reps</strong></p>
+                    <% end %>
+                    <p><%= score.notes %></p>
+                    <p><%= format_date score.date %></p>
+                    <p><%= score.public_private %></p>
+                    <br>
+
+                    <%= link_to "Edit Score", edit_score_path(score), class:"edit-score-btn" %></p>
+                    <%= link_to "Delete Score", score_path(score), method: 'delete', class:"delete-score-btn" %></div>
+                    <br>
+                </li>
+            </ul>
+        <% end %>
+</div>
