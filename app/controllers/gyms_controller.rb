@@ -2,7 +2,7 @@ class GymsController < ApplicationController
     include GymsHelper
     before_action :find_gym, only: [:join, :leave, :show, :edit, :update, :destroy]
     before_action :redirect_if_not_belong_to_gym, only: [:edit, :update, :destroy]
-    before_action :redirect_if_not_logged_in?, only: [:new, :create]
+    before_action :redirect_if_not_logged_in?, only: [:join, :leave, :new, :create]
 
     def index
         @gyms = Gym.all
