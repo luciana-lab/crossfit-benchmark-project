@@ -3,7 +3,7 @@ body {
     margin: 0;
 }
 #main-container {
-    margin-bottom: 100px;
+    margin-bottom: 70px;
     overflow: auto;
 }
 
@@ -162,7 +162,7 @@ hr {
 footer {
     clear: both;
     position: fixed;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 20px;
     left: 0;
     bottom: 0;
@@ -364,7 +364,7 @@ div.workouts {
 
 .workout-show li p {
     font: 200 14px/1.5 Helvetica, Verdana, sans-serif;
-    margin: 0; 
+    margin: 0;
 }
   
 .workout-show li {
@@ -598,12 +598,5 @@ div.workouts {
 }
 
 .profile-gym-link {
-    text-decoration: none;
     color: #000;
-}
-
-.workout-show li h4 {
-    font: bold 16.5px/1.5 Helvetica, Verdana, sans-serif;
-    color: #000;
-    margin: 0; 
 }

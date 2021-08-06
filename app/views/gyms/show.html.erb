@@ -24,7 +24,7 @@
         <% @gym.users.each do |user| %>
             <ul class="workout-show">
                 <li>
-                    <p><%= user.first_name %> <%= user.last_name %></p>
+                    <p><%= helper_gym_users_link(user) %></p>
                 </li>
             </ul>
         <% end %>

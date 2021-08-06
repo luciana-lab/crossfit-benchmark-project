@@ -28,7 +28,7 @@ module ScoresHelper
         if score.user.blank?
             "Unknown"
         else
-            "#{score.user.first_name} #{score.user.last_name}"
+            link_to "#{score.user.first_name} #{score.user.last_name}", user_path(score.user), {class: "profile-gym-link"}
         end
     end
 

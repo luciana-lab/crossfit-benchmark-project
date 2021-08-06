@@ -7,25 +7,29 @@
             <%= render 'user' %>
         </li>
     </ul>
+        <% if @user == current_user %>
             <%= link_to "Edit Profile", edit_user_path(@user), class:"edit-score-btn" %>
             <%= link_to "Delete Profile", user_path(@user), method: 'delete', class:"delete-score-btn" %>
+        <% end %>
             <br><br>
         <hr>
 
     <h3>Your Workout Scores</h3>
 
         <% @user.scores.each do |score| %>
-            <ul class="workout-show">
-                <li>    
-                    <h4><%= link_to score.workout.name, workout_scores_path(score.workout), class:"profile-gym-link" %></h4>
-                        <%= render partial: 'scores/score', locals: { score: score } %>
-                    <p><%= helper_public_private(score) %></p> <%#= score.public_private %>
+            <% if score.public? || @user == current_user %>
+                <ul class="workout-show">
+                    <li>    
+                        <h4><%= link_to score.workout.name, workout_scores_path(score.workout), class:"profile-gym-link" %></h4>
+                            <%= render partial: 'scores/score', locals: { score: score } %>
+                        <p><%= helper_public_private(score) %></p>
+                    </li>
+            <% end %>
+                        <% if @user == current_user %>
+                            <%= link_to "Edit Score", edit_score_path(score), class:"edit-score-btn" %>
+                            <%= link_to "Delete Score", score_path(score), method: 'delete', class:"delete-score-btn" %>
                     <br>
-
-                    <%= link_to "Edit Score", edit_score_path(score), class:"edit-score-btn" %></p>
-                    <%= link_to "Delete Score", score_path(score), method: 'delete', class:"delete-score-btn" %></div>
-                    <br>
-                </li>
-            </ul>
+                        <% end %>
+                </ul>
         <% end %>
 </div>

@@ -19,7 +19,7 @@
                 </li>
             <% end %>
 
-            <% if score.user == current_user %>
+            <% if score.public? && score.user == current_user %>
                 <%= link_to "Edit", edit_score_path(score), class: "edit-score-btn" %>
                 <%= link_to "Delete", score_path(score), method: 'delete', class: "delete-score-btn" %>
                 <br>
