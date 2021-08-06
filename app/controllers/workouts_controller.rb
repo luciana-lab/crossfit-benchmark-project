@@ -53,6 +53,6 @@ class WorkoutsController < ApplicationController
     end
 
     def find_workout
-        @workout = Workout.find(params[:id])
+        @workout = Workout.find(params[:id]) rescue not_found
     end
 end

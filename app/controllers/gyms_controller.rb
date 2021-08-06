@@ -56,7 +56,7 @@ class GymsController < ApplicationController
     end
 
     def find_gym
-        @gym = Gym.find(params[:id])
+        @gym = Gym.find(params[:id]) rescue not_found
     end
 
     def redirect_if_not_belong_to_gym

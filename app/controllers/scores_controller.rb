@@ -46,7 +46,6 @@ class ScoresController < ApplicationController
     end
 
     def edit
-        # byebug
         if @score.user != current_user
             redirect_to workouts_path
         end
@@ -71,7 +70,7 @@ class ScoresController < ApplicationController
     end
 
     def find_score
-        @score = Score.find(params[:id])
+        @score = Score.find(params[:id]) rescue not_found
     end
 
 end

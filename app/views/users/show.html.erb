@@ -3,14 +3,12 @@
 
     <ul class="profile">
         <li>
-            <p><%= @user.email %></p>
+            <p><%= @user.email unless @user != current_user %></p>
             <%= render 'user' %>
         </li>
     </ul>
-        <% if @user == current_user %>
-            <%= link_to "Edit Profile", edit_user_path(@user), class:"edit-score-btn" %>
-            <%= link_to "Delete Profile", user_path(@user), method: 'delete', class:"delete-score-btn" %>
-        <% end %>
+            <%= link_to "Edit Profile", edit_user_path(@user), class:"edit-score-btn" unless @user != current_user %>
+            <%= link_to "Delete Profile", user_path(@user), method: 'delete', class:"delete-score-btn" unless @user != current_user %>
             <br><br>
         <hr>
 
@@ -25,11 +23,9 @@
                         <p><%= helper_public_private(score) %></p>
                     </li>
             <% end %>
-                        <% if @user == current_user %>
-                            <%= link_to "Edit Score", edit_score_path(score), class:"edit-score-btn" %>
-                            <%= link_to "Delete Score", score_path(score), method: 'delete', class:"delete-score-btn" %>
+                            <%= link_to "Edit Score", edit_score_path(score), class:"edit-score-btn" unless @user != current_user %>
+                            <%= link_to "Delete Score", score_path(score), method: 'delete', class:"delete-score-btn" unless @user != current_user %>
                     <br>
-                        <% end %>
                 </ul>
         <% end %>
 </div>

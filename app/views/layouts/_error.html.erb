@@ -5,10 +5,11 @@
             <%= pluralize(object.errors.count, "error") %>:<br>
 
             <ul>
-            <% object.errors.each do |error| %>
-                <ol><%= error.full_message %></ol>
-            <% end %>
+                <% object.errors.each do |error| %>
+                    <ol><%= error.full_message %></ol>
+                <% end %>
             </ul>
             <br>
-         </span>
+        </span>
+    </div>
 <% end %>

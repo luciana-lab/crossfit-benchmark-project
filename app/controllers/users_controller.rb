@@ -18,9 +18,6 @@ class UsersController < ApplicationController
     end
 
     def show
-        # if @user != current_user
-        #     redirect_to root_path
-        # end
     end
 
     def edit
@@ -46,6 +43,6 @@ class UsersController < ApplicationController
     end
 
     def find_user
-        @user = User.find(params[:id])
+        @user = User.find(params[:id]) rescue not_found
     end
 end
