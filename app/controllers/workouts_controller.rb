@@ -32,6 +32,9 @@ class WorkoutsController < ApplicationController
     end
 
     def edit
+        if !@workout.scores.blank?
+            redirect_to workouts_path
+        end
     end
 
     def update
