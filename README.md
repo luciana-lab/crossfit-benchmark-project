@@ -69,7 +69,7 @@ And then populate the database:
 
 To run type `rails s` in your terminar
 
-and go to [local web server](http://127.0.0.1:3000/)
+and go to your http://localhost:3000 [local web server](http://127.0.0.1:3000/)
 ## Contributing
 
 This project is intended to be a safe and welcoming space for collaboration.
