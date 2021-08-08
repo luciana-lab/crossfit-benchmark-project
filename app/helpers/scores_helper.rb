@@ -32,4 +32,12 @@ module ScoresHelper
         end
     end
 
+    def helper_edit_score_link(score)
+        link_to "Edit Score", edit_score_path(score), class:"edit-score-btn" unless score.user != current_user
+    end
+
+    def helper_delete_score_link(score)
+        link_to "Delete Score", score_path(score), method: 'delete', class:"delete-score-btn" unless score.user != current_user 
+    end
+
 end

@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback', to: "sessions#omniauth"
 
-  # get '/join', to: "gyms#join"
-
   root 'welcome#index'
 
   get '/signup', to: "users#new"

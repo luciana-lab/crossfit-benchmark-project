@@ -3,12 +3,12 @@
 
     <ul class="profile">
         <li>
-            <p><%= @user.email unless @user != current_user %></p>
+            <p><%= helper_display_or_hide_email %></p>
             <%= render 'user' %>
         </li>
     </ul>
-            <%= link_to "Edit Profile", edit_user_path(@user), class:"edit-score-btn" unless @user != current_user %>
-            <%= link_to "Delete Profile", user_path(@user), method: 'delete', class:"delete-score-btn" unless @user != current_user %>
+            <%= helper_edit_profile_link %>
+            <%= helper_delete_profile_link %>
             <br><br>
         <hr>
 
@@ -23,8 +23,8 @@
                         <p><%= helper_public_private(score) %></p>
                     </li>
             <% end %>
-                            <%= link_to "Edit Score", edit_score_path(score), class:"edit-score-btn" unless @user != current_user %>
-                            <%= link_to "Delete Score", score_path(score), method: 'delete', class:"delete-score-btn" unless @user != current_user %>
+                        <%= helper_edit_score_link(score) %>
+                        <%= helper_delete_score_link(score) %>
                     <br>
                 </ul>
         <% end %>

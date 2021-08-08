@@ -10,14 +10,10 @@
             </li>
         </ul>
 
-        <%# add it inside Helper? %>
-        <% if logged_in? && @workout.scores.blank? %>
-            <br>
-            <%= link_to "Edit", edit_workout_path(@workout), class: "edit-score-btn" %>
-            <%= button_to "Delete", workout_path(@workout), method: :delete, data: { confirm: "Are you sure?" }, class: "delete-score-btn" %>
-            <br><br><br>
-        <% end %>
-        
+        <br>
+            <%= helper_edit_workout_link %>
+            <%= helper_delete_workout_link %>
+        <br><br><br>     
         
         <%= link_to "Check Scores", workout_scores_path(@workout), class: "score-btn" %>
 </div>

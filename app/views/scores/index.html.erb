@@ -19,11 +19,9 @@
                 </li>
             <% end %>
 
-            
-                <%= link_to "Edit", edit_score_path(score), class: "edit-score-btn" unless score.user != current_user %>
-                <%= link_to "Delete", score_path(score), method: 'delete', class: "delete-score-btn" unless score.user != current_user %>
-                <br>
-            
+                    <%= helper_edit_score_link(score) %>
+                    <%= helper_delete_score_link(score) %>
+                    <br>
                 </ul>
                 <br>
         <% end %>

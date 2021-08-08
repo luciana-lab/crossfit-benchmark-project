@@ -11,7 +11,6 @@ class UsersController < ApplicationController
         if @user.save
             
             session[:user_id] = @user.id
-            # byebug
             redirect_to user_path(@user)
         else
             @user.build_gym

@@ -4,7 +4,7 @@
     <%= f.text_field :name, {placeholder: "JT", class: "form-group" } %>
 
     <%= f.label :wod_group %>
-        <%= f.text_field :wod_group, {list: "group_autocomplete", placeholder: "Hero", class: "form-group"} %>
+        <%= f.text_field :wod_group, {list: "group_autocomplete", placeholder: "Select or Add new option", class: "form-group"} %>
             <datalist id="group_autocomplete">
                 <% Workout.all.map(&:wod_group).uniq.each do |select| %>
                     <option value="<%= select %>">
@@ -15,7 +15,7 @@
     <%= f.select :category, options_for_select(Workout.all.map {|select| [ select.category ]}.uniq), {prompt: true}, class: "form-group" %>
 
     <%= f.label :description %>
-    <%= f.text_area :description, {placeholder: "21-15-9 reps of: Handstand push-ups, Ring dips, Push-ups", class: "form-group"} %>
+    <%= f.text_area :description, {placeholder: "(line break by adding comma ',' in the end) 21-15-9 reps of: Handstand push-ups, Ring dips, Push-ups", class: "form-group"} %>
 
     <%= f.label :about %>
     <%= f.text_area :about, {placeholder: "JT is in honor of Navy Petty Officer First Class Jeff Taylor, 30, of Little Creek, VA, who was killed in Afghanistan.", class: "form-group"} %>
