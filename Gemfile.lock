@@ -104,6 +104,7 @@ GEM
     faraday-patron (1.0.0)
     faraday-rack (1.0.0)
     ffi (1.15.3)
+    foreman (0.87.2)
     globalid (0.5.2)
       activesupport (>= 5.0)
     hashie (4.1.0)
@@ -259,6 +260,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   dotenv-rails
+  foreman
   jbuilder (~> 2.7)
   listen (~> 3.3)
   omniauth
