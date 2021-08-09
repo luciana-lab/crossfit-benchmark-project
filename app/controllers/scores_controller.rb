@@ -14,12 +14,12 @@ class ScoresController < ApplicationController
                      @scores = Score.order_by_result_reps(@workout.name)
                 end
             end
-        else
-                if @workout.category == "For time"
-                    @scores = Score.order_by_result_time(@workout.name)
-                else
-                    @scores = Score.order_by_result_reps(@workout.name)
-                end
+        # else
+                # if @workout.category == "For time"
+                #     @scores = Score.order_by_result_time(@workout.name)
+                # else
+                #     @scores = Score.order_by_result_reps(@workout.name)
+                # end
         end
     end
 

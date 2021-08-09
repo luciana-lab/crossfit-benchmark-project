@@ -16,4 +16,12 @@ module GymsHelper
         end
     end
 
+    def helper_gym_website
+        link_to "Website", "http://#{@gym.website}", {target: "_blank", class: "gym-ext-link"} unless @gym.website.blank?
+    end
+
+    def helper_gym_address
+        "Address: #{@gym.address}" unless @gym.address.blank?
+    end
+
 end

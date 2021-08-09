@@ -6,6 +6,7 @@
                 <%= render partial: 'workouts/workout', locals: {workout: @workout} %>
             </li>
         </ul>
+                <%= link_to "Add your score", new_workout_score_path, class: "add-score-btn" %>
     <hr>
 
     <h3>Leaderboard</h3>
@@ -25,6 +26,4 @@
                 </ul>
                 <br>
         <% end %>
-
-    <%= link_to "Add your score", new_workout_score_path, class: "add-score-btn" %>
 </div>

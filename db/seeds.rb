@@ -90,9 +90,9 @@ scores = [
     {rx: 1, result_time: "00:11:26", date: "2019-10-02", public: 1, user: luciana, workout: helen},
     {rx: 0, result_time: "00:04:16", date: "2021-02-12", notes: "65 lbs", public: 1, user: luciana, workout: isabel},
     {rx: 1, result_time: "00:08:51", date: "2019-04-05", public: 1, user: luciana, workout: karen},
-    {rx: 0, result_time: "00:63:15", date: "2018-05-28", notes: "20 rounds of Cindy, pull-ups with a band, no vest", public: 1, user: luciana, workout: murph},
-    {rx: 0, result_time: "00:62:27", date: "2019-05-27", notes: "20 rounds of Cindy, no vest)", public: 1, user: luciana, workout: murph},
-    {rx: 0, result_time: "00:74:55", date: "2021-05-29", notes: "20 rounds of Cindy, no vest", public: 0, user: luciana, workout: murph},
+    {rx: 0, result_time: "00:59:59", date: "2018-05-28", notes: "63:15 / 20 rounds of Cindy, pull-ups with a band, no vest", public: 1, user: luciana, workout: murph},
+    {rx: 0, result_time: "00:59:59", date: "2019-05-27", notes: "62:27 / 20 rounds of Cindy, no vest)", public: 1, user: luciana, workout: murph},
+    {rx: 0, result_time: "00:59:59", date: "2021-05-29", notes: "74:55 / 20 rounds of Cindy, no vest", public: 0, user: luciana, workout: murph},
     {rx: 0, result_reps: 143, date: "2021-03-05", notes: "10 + 3 / 2 bands (green/purple) bar MU, 2 mats HSPU, 45 lbs kb swing", public: 1, user: luciana, workout: nate},
     {rx: 0, result_time: "00:48:50", date: "2019-12-31", notes: "100 lbs power clenas", public: 1, user: luciana, workout: holleyman}
 ]

@@ -1,9 +1,10 @@
 <div class="container">
     
     <div class="gym-show">
-        <h2><%= link_to @gym.name, "http://#{@gym.website}", {target: "_blank", class: "gym-ext-link"} %></h2>
-        <p>Address: <%= @gym.address %></p>
-    <div>
+        <h2><%= @gym.name %></h2>
+        <p><%= helper_gym_website %></p>
+        <p><%= helper_gym_address %></p>
+    </div>
     <br>
 
         <% if current_user_belongs_to_gym %>

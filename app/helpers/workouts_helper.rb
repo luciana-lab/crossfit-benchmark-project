@@ -18,5 +18,4 @@ module WorkoutsHelper
         end
     end
 
-
 end

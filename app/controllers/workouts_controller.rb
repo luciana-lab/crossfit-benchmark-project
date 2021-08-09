@@ -38,7 +38,7 @@ class WorkoutsController < ApplicationController
     end
 
     def update
-        if @workout.update
+        if @workout.update(workout_params)
             redirect_to workout_path(@workout)
         else
             render :edit
