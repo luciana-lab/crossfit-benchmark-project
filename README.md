@@ -86,5 +86,4 @@ Everyone interacting in the CrossFit Benchmark project's codebases, issue tracke
 ## Extras
 Project Walkthrough Video [here](https://youtu.be/zjdYMrgik_A)\
 Blog Post [here](https://luciana-lab.medium.com/rails-time-select-form-and-view-bonus-date-d2700d913a50)\
-Heroku link [here]()\
 30 minutes video coding [here](https://youtu.be/T7HTeDDb1Tc)

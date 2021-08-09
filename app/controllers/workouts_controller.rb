@@ -4,8 +4,6 @@ class WorkoutsController < ApplicationController
 
     def index
         if params[:category]
-            #params[:category]
-            #@workouts = Workout.where(category: params[:category])
             @workouts = Workout.category_nav_selector(params[:category])
         else
             @workouts = Workout.all
