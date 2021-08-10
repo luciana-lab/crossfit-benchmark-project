@@ -43,8 +43,8 @@ A score belongs to a user and belongs to a workout.
 
 *Attributes*\
 A gym has a name (unique and required), website, and address. It can't create a gym without a name - A user can create an account without belongs to a gym and join a gym or create a gym later.\
-A user has a first name (required), last name (required), email (unique and required), password (required), age, height, weight, country, and gym id.
-A workout has a name (unique and required), wod_group, category (required), description (required), and about.
+A user has a first name (required), last name (required), email (unique and required), password (required), age, height, weight, country, and gym id.\
+A workout has a name (unique and required), wod_group, category (required), description (required), and about.\
 A score can be RX (when the user is able to do all the moviment as described, or scale if not), result time (for the workout categories that the result is a time), result reps (for the workouts categories that the result is the number of repetitions achieved by the athlete), date, notes, public (if everyone can see this score), user id, and workout id.
 
 Flow diagram [here](https://drive.google.com/file/d/1N-ZeTPwMwMq8o3Aytgb_hThB8fndvzzV/view?usp=sharing)
