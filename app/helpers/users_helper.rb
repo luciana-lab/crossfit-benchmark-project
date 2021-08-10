@@ -1,4 +1,5 @@
 module UsersHelper
+    
     def helper_display_or_hide_email
         @user.email unless @user != current_user
     end

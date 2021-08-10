@@ -4,7 +4,6 @@ class ScoresController < ApplicationController
 
     def index
         if params[:workout_id] && @workout = Workout.find(params[:workout_id])
-            # @scores = @workout.scores
             if @workout.nil?
                 redirect_to workouts_path, alert: "Workout not found."
             else

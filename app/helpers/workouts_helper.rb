@@ -1,10 +1,4 @@
 module WorkoutsHelper
-    # def workout_description(workout)
-    #     w = workout.description.split(/[\,\:]/).map do |value|
-    #        return content_tag(:div, value)
-    #     end
-    #     w.join(" ")
-    # end
 
     def helper_edit_workout_link
         if logged_in? && @workout.scores.blank?

@@ -6,9 +6,8 @@ class User < ApplicationRecord
     validates :email, presence: true, uniqueness: true
     validates :first_name, :last_name, presence: true
     has_secure_password
-    #accepts_nested_attributes_for :gym #gym_attributes=
+    #accepts_nested_attributes_for :gym
 
-    # makes gyms unique and show the drop down menu and it will create if the option is fill in
     def gym_attributes=(hash_of_attributes)
         if !hash_of_attributes["name"].blank?
             self.gym = Gym.find_or_create_by(hash_of_attributes)
