@@ -8,4 +8,18 @@ module ApplicationHelper
         !!current_user
     end
     
+    def errors_message(object)
+        if object.errors.any?
+            tag.div id: "error_explanation" do
+                pluralize(object.errors.count, "error")
+            
+                tag.ul do
+                    object.errors.map do |error|
+                        concat tag.li error.full_message
+                    end.join.html_safe
+                end
+            end
+        end
+    end
+   
 end

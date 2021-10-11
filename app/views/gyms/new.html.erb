@@ -1,7 +1,8 @@
 <div class="container">
     <h2>Create Gym</h2>
     <hr>
-        <%= render partial: 'layouts/error', locals: { object: @gym } %>
+        <%#= render partial: 'layouts/error', locals: { object: @gym } %>
+        <%= errors_message(@gym) %>
 
         <div class="col">  
             <%= form_for @gym do |f| %>

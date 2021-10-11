@@ -1,4 +1,4 @@
-<%= render partial: 'layouts/error', locals: { object: @user } %>
+<%= errors_message(@user) %>
 
     <div class="col">
         <%= f.label :email %><br>

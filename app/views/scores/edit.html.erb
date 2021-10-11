@@ -8,7 +8,6 @@
 
             <div class="col">
                 <%= form_for @score do |f| %>
-                    <%#= f.hidden_field :user_id, value: current_user.id %>
                     <%= f.hidden_field :workout_id, value: @score.workout.id %>
 
                     <%= render partial: 'form', locals: { f: f } %>

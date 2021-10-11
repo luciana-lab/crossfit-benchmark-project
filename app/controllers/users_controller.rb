@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
     def new
         @user = User.new
-        @user.gym = Gym.new # same as @user.build_gym
+        @user.gym = Gym.new
     end
 
     def create
