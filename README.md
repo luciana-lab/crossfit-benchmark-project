@@ -84,6 +84,7 @@ The gem is available as open source under the terms of the [MIT License](https:/
 Everyone interacting in the CrossFit Benchmark project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/luciana-lab/crossfit-benchmark-project/blob/main/CODE_OF_CONDUCT.md).
 
 ## Extras
+Live Project Heroku [here](https://crossfit-benchmark.herokuapp.com/)\
 Project Walkthrough Video [here](https://youtu.be/zjdYMrgik_A)\
 Blog Post [here](https://luciana-lab.medium.com/rails-time-select-form-and-view-bonus-date-d2700d913a50)\
 30 minutes video coding [here](https://youtu.be/T7HTeDDb1Tc)
