@@ -48,7 +48,7 @@ A workout has a name (unique and required), wod_group, category (required), desc
 A score can be RX (when the user is able to do all the moviment as described, or scale if not), result time (for the workout categories that the result is a time), result reps (for the workouts categories that the result is the number of repetitions achieved by the athlete), date, notes, public (if everyone can see this score), user id, and workout id.
 
 Flow diagram [here](https://drive.google.com/file/d/1N-ZeTPwMwMq8o3Aytgb_hThB8fndvzzV/view?usp=sharing)
-## Instalation
+## Installation
 Fork and clone this repo.
 
 Install all the gems with:
